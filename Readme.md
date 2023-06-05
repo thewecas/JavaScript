@@ -156,7 +156,7 @@
 ## 6. Scope
 
 - scope ~ availabiltiy  
-  | Global scope | Fucntion scope | Block scope | |
+  | Global scope | Function scope | Block scope | |
   | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------- | --------------------------------------------------------- | - |
   | Variables declared outside of any functions or blocks. | Variables declared within a function | Variables declared within block (defined by curly braces) | |
-  | accessed from anywhere within the code, including other functions and blocks. | only accessible within that function and any nested functions inside it | only accessible within the block for `let`. | |
+  | accessed from anywhere within the code, including other functions and blocks. | only accessible within that function and any nested functions inside it | only accessible within the block. | |
