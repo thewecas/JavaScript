@@ -181,11 +181,11 @@
 | Expression                              | Statements                                     |
 | --------------------------------------- | ---------------------------------------------- |
 | Expressions evaluates to a single value | Statemets are the instructions to perform task |
-| Example :`2+3*5` will evaluates to 17   | Example :`if (true) concole.log("hi")`         |
+| Example :`2+3*5` will evaluates to 17   | Example :`if (true) console.log("hi")`         |
 
 - **Function expression :**
   - function as part of an expresion
-  - Example : `let sum = fucniton(){...}`
+  - Example : `let sum = funciton(){...}`
 
 ## 8. IIFE, Modules and Namespaces
 
