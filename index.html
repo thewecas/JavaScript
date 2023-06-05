@@ -339,7 +339,7 @@ if (x === 1) {
 console.log(x); // 1
 </code></pre></li>
 <li>
-<p>var : scope within the block/function i.e, withinn enitire enclosing function</p>
+<p>var : scope within the function i.e, withinn enitire enclosing function</p>
 <pre data-role="codeBlock" data-info class="language-"><code>var x = 1;
 
 function foo() {
@@ -423,7 +423,7 @@ false + 5      // 5 , `false` is interpreted as value `0`
 <li>
 <p>Only 3 types of conversion can be done in js</p>
 <ol>
-<li>o String<pre data-role="codeBlock" data-info class="language-"><code>  String(123)        // explicit
+<li>to String<pre data-role="codeBlock" data-info class="language-"><code>  String(123)        // explicit
   123 + &apos;&apos;           // implicit
 </code></pre></li>
 <li>to boolean<pre data-role="codeBlock" data-info class="language-"><code> Boolean(2)          // explicit
@@ -479,6 +479,36 @@ false + 5      // 5 , `false` is interpreted as value `0`
 </tr>
 </tbody>
 </table>
+<h2 class="mume-header" id="6-scope">6. Scope</h2>
+
+<ul>
+<li>scope ~ availabiltiy
+<table>
+<thead>
+<tr>
+<th>Global scope</th>
+<th>Fucntion scope</th>
+<th>Block scope</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Variables declared outside of any functions or blocks.</td>
+<td>Variables declared within a function</td>
+<td>Variables declared within block (defined by curly braces)</td>
+<td></td>
+</tr>
+<tr>
+<td>accessed from anywhere within the code, including other functions and blocks.</td>
+<td>only accessible within that function and any nested functions inside it</td>
+<td>only accessible within the block for <code>let</code>.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
 
       </div>
       

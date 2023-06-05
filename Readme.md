@@ -49,7 +49,7 @@
     console.log(x); // 1
     ```
 
-  - var : scope within the block/function i.e, withinn enitire enclosing function
+  - var : scope within the function i.e, withinn enitire enclosing function
 
     ```
     var x = 1;
@@ -120,7 +120,7 @@
 
 - Only 3 types of conversion can be done in js
 
-  1. o String
+  1. to String
      ```
        String(123)        // explicit
        123 + ''           // implicit
@@ -152,3 +152,11 @@
 | Checks if the values being compared are equal, performing type coercion if necessary.<br />Performs a loose comparison | Checks if the values being compared are equal and of the same type, without performing any type coercion.<br />Performs a strict comparison | Determine the type of a value or expression            |
 | Returns boolean value                                                                                                  | Returns boolean value                                                                                                                       | Returns a string representing the type of the operand. |
 | Example :<br />` 4 == '4'       // true`                                                                               | Example :<br />` 4 === '4'    // fasle`                                                                                                     | Example :<br />`typeof 'hi'    // 'string' `           |
+
+## 6. Scope
+
+- scope ~ availabiltiy  
+  | Global scope | Fucntion scope | Block scope | |
+  | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------- | --------------------------------------------------------- | - |
+  | Variables declared outside of any functions or blocks. | Variables declared within a function | Variables declared within block (defined by curly braces) | |
+  | accessed from anywhere within the code, including other functions and blocks. | only accessible within that function and any nested functions inside it | only accessible within the block for `let`. | |
