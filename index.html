@@ -261,7 +261,7 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <div><h1 class="mume-header" id="33-javascript-concepts-every-developer-should-know-%EF%B8%8F%EF%B8%8Fhttpsdevtoeludadev33-javascript-concepts-every-beginner-should-know-with-tutorials-4kao1-call-stack"><a href="https://dev.to/eludadev/33-javascript-concepts-every-beginner-should-know-with-tutorials-4kao#1-call-stack">33 JavaScript Concepts Every Developer Should Know &#x1F913;&#xFE0F;&#x1F4AF;&#xFE0F;</a></h1>
+      <div><h1 class="mume-header" id="33-javascript-concepts-every-developer-should-know-%EF%B8%8F%EF%B8%8Fhttpsgithubcomleonardomso33-js-concepts"><a href="https://github.com/leonardomso/33-js-concepts">33 JavaScript Concepts Every Developer Should Know &#x1F913;&#xFE0F;&#x1F4AF;&#xFE0F;</a></h1>
 
 <h2 class="mume-header" id="1-call-stack-heap-queue-execution-context-event-loop">1. Call stack, Heap, Queue, Execution Context, Event Loop</h2>
 
@@ -655,6 +655,61 @@ console.log(marksNamespace.mark1);      //accessing the mark1 namespace
 console.log(marksNamespace.avg());      //accessing the avg namespace, which calls the associated function
 </code></pre></li>
 </ul>
+</li>
+</ul>
+<h2 class="mume-header" id="9-message-queue-and-event-loop">9. Message Queue and Event Loop</h2>
+
+<ul>
+<li>When asynchronous operations such as newtwork request or timer is encountered, it&apos;s associated callback is placed in the queue in a fifo fashion,</li>
+<li>After the execution of synchronous code, the event loop process the queue.</li>
+<li>Event loop looks for pending task in queue, if yes then puts that task inside the stack.</li>
+<li>Asynchronous operations may include <code>eventlisteners</code> , <code>setTimeout</code> or any api request etc</li>
+</ul>
+<h2 class="mume-header" id="10-settimeout-setinterval-and-requestanimationframe">10. setTimeout, setInterval and requestAnimationFrame</h2>
+
+<ul>
+<li>
+<h3>setTimeout vs setInterval</h3>
+<table>
+<thead>
+<tr>
+<th>setTimeout</th>
+<th>setInterval</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Executes a specified piece of code or a function once after a given delay.</td>
+<td>Executes a specified piece of code or a function repeatedly at a given interval.</td>
+</tr>
+<tr>
+<td>Syntax :<code>setTimeout(callback_fn, delay, ...parameters)</code></td>
+<td>Syntax :<code>setInterval(callback_fn, delay, ...parameters)</code></td>
+</tr>
+<tr>
+<td>Example :<code>setTimeout(function(){console.log(&quot;hello&quot;);},1000)</code> will print <code>hello</code> once after 1 second of program&#xA0;execution</td>
+<td>Eample :<code>setInterval(function(){console.log(&quot;hello&quot;);},1000)</code> will print <code>hello</code> every 1 second</td>
+</tr>
+<tr>
+<td>Execution can be terminated with <code>clearTimeout()</code></td>
+<td>Execution can be terminated with <code>clearInterval()</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<h3>requestAnimationFrame</h3>
+<ul>
+<li>used to schedule a function to execute before updating visual elements in the webpage (called repainting)</li>
+<li>Syntax : <code>requestAnimationFrame(callback_fn)</code></li>
+</ul>
+</li>
+</ul>
+<h2 class="mume-header" id="11-javascript-engines">11. JavaScript Engines</h2>
+
+<ul>
+<li>
+<p>v8 engine is used in javascript, node js etc</p>
 </li>
 <li class="task-list-item">
 <p><input type="checkbox" class="task-list-item-checkbox" checked> closure</p>

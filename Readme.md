@@ -1,4 +1,4 @@
-# [33 JavaScript Concepts Every Developer Should Know 🤓️💯️](https://dev.to/eludadev/33-javascript-concepts-every-beginner-should-know-with-tutorials-4kao#1-call-stack)
+# [33 JavaScript Concepts Every Developer Should Know 🤓️💯️](https://github.com/leonardomso/33-js-concepts)
 
 ## 1. Call stack, Heap, Queue, Execution Context, Event Loop
 
@@ -266,6 +266,33 @@
     console.log(marksNamespace.mark1);      //accessing the mark1 namespace
     console.log(marksNamespace.avg());      //accessing the avg namespace, which calls the associated function
     ```
+
+## 9. Message Queue and Event Loop
+
+- When asynchronous operations such as newtwork request or timer is encountered, it's associated callback is placed in the queue in a fifo fashion,
+- After the execution of synchronous code, the event loop process the queue.
+- Event loop looks for pending task in queue, if yes then puts that task inside the stack.
+- Asynchronous operations may include `eventlisteners` , `setTimeout` or any api request etc
+
+## 10. setTimeout, setInterval and requestAnimationFrame
+
+- ### setTimeout vs setInterval
+
+  | setTimeout                                                                                                                | setInterval                                                                                     |
+  | ------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+  | Executes a specified piece of code or a function once after a given delay.                                                | Executes a specified piece of code or a function repeatedly at a given interval.                |
+  | Syntax :`setTimeout(callback_fn, delay, ...parameters)`                                                                   | Syntax :`setInterval(callback_fn, delay, ...parameters)`                                        |
+  | Example :`setTimeout(function(){console.log("hello");},1000)` will print `hello` once after 1 second of program execution | Eample :`setInterval(function(){console.log("hello");},1000)` will print `hello` every 1 second |
+  | Execution can be terminated with `clearTimeout()`                                                                         | Execution can be terminated with `clearInterval()`                                              |
+
+- ### requestAnimationFrame
+
+  - used to schedule a function to execute before updating visual elements in the webpage (called repainting)
+  - Syntax : `requestAnimationFrame(callback_fn)`
+
+## 11. JavaScript Engines
+
+- v8 engine is used in javascript, node js etc
 
 - [x] closure
 - [x] hoisting
