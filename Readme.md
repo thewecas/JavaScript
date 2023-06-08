@@ -292,7 +292,67 @@
 
 ## 11. JavaScript Engines
 
-- v8 engine is used in javascript, node js etc
+- for running Js, we need a Js runtime environment.
+- Js runtime envirnoment consist of JS Engine, API, event loop, queues....
+- v8 engine (written in c++) is most famously used js engine, in chrome & node js
+- 3 process happens inside the js engine
+
+  - PARSING : code -> token -> abstract syntax tree,
+  - COMPILATION (JIT) : AST-> byte code & optimize
+  - EXECUTION : uses memory heap & call stack in the process
+
+- Mark & sweep algorithm is used for grabage collection
+
+## 12. Bitwise Operators
+
+- perofrms operations on bits (0's and 1's)
+- **NOT `~`** :
+  - works on single bit, replaces 0 with 1 and 1 with 0
+  - Example : `~5` -> `~ (101) `->`010`
+- **OR `|`** :
+  - either of the bit is 1 => result 1
+  - Example : `5 | 6` -> `101 | 110` -> `111` -> `7`
+- **AND `&`** :
+  - both bits are `1` =>result 1
+  - Example : `7 & 6 `->`111 & 110 `->`110 `->`6`
+- **XOR `^`** :
+  - one bit is `1` & other bit is `0` -> result `1`
+  - Exmple : `5 ^ 6` -> `101 ^ 110` -> `011` ->`3`
+- **Leftshift `<<`** :
+  - shifts the number to left by specified number, works on single bit
+  - Example : `5<<2` -> `0000 0101` -> `0001 0100` ->20
+- **Rightshift `>>`** :
+  - shifts the number to left by specified number, works on single bit
+  - Example `20>>2` -> `001 0100` -> `0000 0101` ->5
+
+## 13. DOM
+
+- Document Object Model is a tree like representation of html document
+- Each element is a node. HTML element is the root of the DOM
+- `console.dir(document)` will print all the element & their properties
+- ### Selectors
+
+  | Selector   | CSS          | Js                                                                                            | JQuery            |
+  | ---------- | ------------ | --------------------------------------------------------------------------------------------- | ----------------- |
+  | Id         | `#id`        | `document.getElementById('id')` <br />`document.querySelector('#id')`                         | `$('#id')`        |
+  | Class name | `.className` | `document.getElementsByClassName('className')` <br />`document.querySelectorAll('className')` | `$('.className')` |
+  | Tag name   | `tagName`    | `document.getElementsByTagName(tagName)`<br />`document.querySelectorAll(tagName)`            | `$('tagName')`    |
+
+  - `querySelector()` returns the first element
+  - `querySelectorAll()` returns NodeList of elements
+  - psuedo classes like `:nth-child()` , `::before` , `::placeholder` can also be used with selectors for selecting the html elements
+
+- ### Node methods
+
+  `parentNode()` , `parentElement()` , `childNodes()` , `children()` , `firstChild()` , `firstElementChild()` , `lastChild()` , `lastElementChild()` , `nextSibling()` , `nextElementSibling()` , `previousSibling()` , `previousElementSibling()`
+
+  - methods that have the keyword `Element` returns only Element nodes,
+  - methods without keyowrd `Element` returns all kind of nodes i.e Element node, text node, comment node etc.
+
+- Create Element : `createElement(tagName)`
+- Create text node : `createTextNode('text')`
+- Add element to the document : `appendChild()` , `prependChild()`
+-
 
 - [x] closure
 - [x] hoisting

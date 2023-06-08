@@ -709,8 +709,135 @@ console.log(marksNamespace.avg());      //accessing the avg namespace, which cal
 
 <ul>
 <li>
-<p>v8 engine is used in javascript, node js etc</p>
+<p>for running Js, we need a Js runtime environment.</p>
 </li>
+<li>
+<p>Js runtime envirnoment consist of JS Engine, API, event loop, queues....</p>
+</li>
+<li>
+<p>v8 engine (written in c++) is most famously used js engine, in chrome &amp; node js</p>
+</li>
+<li>
+<p>3 process happens inside the js engine</p>
+<ul>
+<li>PARSING : code -&gt; token -&gt; abstract syntax tree,</li>
+<li>COMPILATION (JIT) : AST-&gt; byte code &amp; optimize</li>
+<li>EXECUTION : uses memory heap &amp; call stack in the process</li>
+</ul>
+</li>
+<li>
+<p>Mark &amp; sweep algorithm is used for grabage collection</p>
+</li>
+</ul>
+<h2 class="mume-header" id="12-bitwise-operators">12. Bitwise Operators</h2>
+
+<ul>
+<li>perofrms operations on bits (0&apos;s and 1&apos;s)</li>
+<li><strong>NOT <code>~</code></strong> :
+<ul>
+<li>works on single bit, replaces 0 with 1 and 1 with 0</li>
+<li>Example : <code>~5</code> -&gt; <code>~ (101)</code>-&gt;<code>010</code></li>
+</ul>
+</li>
+<li><strong>OR <code>|</code></strong> :
+<ul>
+<li>either of the bit is 1 =&gt; result 1</li>
+<li>Example : <code>5 | 6</code> -&gt; <code>101 | 110</code> -&gt; <code>111</code> -&gt; <code>7</code></li>
+</ul>
+</li>
+<li><strong>AND <code>&amp;</code></strong> :
+<ul>
+<li>both bits are <code>1</code> =&gt;result 1</li>
+<li>Example : <code>7 &amp; 6</code>-&gt;<code>111 &amp; 110</code>-&gt;<code>110</code>-&gt;<code>6</code></li>
+</ul>
+</li>
+<li><strong>XOR <code>^</code></strong> :
+<ul>
+<li>one bit is <code>1</code> &amp; other bit is <code>0</code> -&gt; result <code>1</code></li>
+<li>Exmple : <code>5 ^ 6</code> -&gt; <code>101 ^ 110</code> -&gt; <code>011</code> -&gt;<code>3</code></li>
+</ul>
+</li>
+<li><strong>Leftshift <code>&lt;&lt;</code></strong> :
+<ul>
+<li>shifts the number to left by specified number, works on single bit</li>
+<li>Example : <code>5&lt;&lt;2</code> -&gt; <code>0000 0101</code> -&gt; <code>0001 0100</code> -&gt;20</li>
+</ul>
+</li>
+<li><strong>Rightshift <code>&gt;&gt;</code></strong> :
+<ul>
+<li>shifts the number to left by specified number, works on single bit</li>
+<li>Example <code>20&gt;&gt;2</code> -&gt; <code>001 0100</code> -&gt; <code>0000 0101</code> -&gt;5</li>
+</ul>
+</li>
+</ul>
+<h2 class="mume-header" id="13-dom">13. DOM</h2>
+
+<ul>
+<li>
+<p>Document Object Model is a tree like representation of html document</p>
+</li>
+<li>
+<p>Each element is a node. HTML element is the root of the DOM</p>
+</li>
+<li>
+<p><code>console.dir(document)</code> will print all the element &amp; their properties</p>
+</li>
+<li>
+<h3>Selectors</h3>
+<table>
+<thead>
+<tr>
+<th>Selector</th>
+<th>CSS</th>
+<th>Js</th>
+<th>JQuery</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td><code>#id</code></td>
+<td><code>document.getElementById(&apos;id&apos;)</code>&#xA0;<br><code>document.querySelector(&apos;#id&apos;)</code></td>
+<td><code>$(&apos;#id&apos;)</code></td>
+</tr>
+<tr>
+<td>Class name</td>
+<td><code>.className</code></td>
+<td><code>document.getElementsByClassName(&apos;className&apos;)</code>&#xA0;<br><code>document.querySelectorAll(&apos;className&apos;)</code></td>
+<td><code>$(&apos;.className&apos;)</code></td>
+</tr>
+<tr>
+<td>Tag name</td>
+<td><code>tagName</code></td>
+<td><code>document.getElementsByTagName(tagName)</code><br><code>document.querySelectorAll(tagName)</code></td>
+<td><code>$(&apos;tagName&apos;)</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>querySelector()</code> returns the first element</li>
+<li><code>querySelectorAll()</code> returns NodeList of elements</li>
+<li>psuedo classes like <code>:nth-child()</code> , <code>::before</code> , <code>::placeholder</code> can also be used with selectors for selecting the html elements</li>
+</ul>
+</li>
+<li>
+<h3>Node methods</h3>
+<p><code>parentNode()</code> , <code>parentElement()</code> , <code>childNodes()</code> , <code>children()</code> , <code>firstChild()</code> , <code>firstElementChild()</code> , <code>lastChild()</code> , <code>lastElementChild()</code> , <code>nextSibling()</code> , <code>nextElementSibling()</code> , <code>previousSibling()</code> , <code>previousElementSibling()</code></p>
+<ul>
+<li>methods that have the keyword <code>Element</code> returns only Element nodes,</li>
+<li>methods without keyowrd <code>Element</code> returns all kind of nodes i.e Element node, text node, comment node etc.</li>
+</ul>
+</li>
+<li>
+<p>Create Element : <code>createElement(tagName)</code></p>
+</li>
+<li>
+<p>Create text node : <code>createTextNode(&apos;text&apos;)</code></p>
+</li>
+<li>
+<p>Add element to the document : <code>appendChild()</code> , <code>prependChild()</code></p>
+</li>
+<li></li>
 <li class="task-list-item">
 <p><input type="checkbox" class="task-list-item-checkbox" checked> closure</p>
 </li>
