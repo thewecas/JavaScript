@@ -1,861 +1,2004 @@
-<!DOCTYPE html><html><head>
-      <title>Readme</title>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      
-      <link rel="stylesheet" href="file:///c:\Users\thewe\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.6.8\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      <style>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Readme</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="file:///c:\Users\thewe\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.6.8\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css"
+    />
+
+    <style>
       /**
  * prism.js Github theme based on GitHub's theme.
  * @author Sam Clarke
  */
-code[class*="language-"],
-pre[class*="language-"] {
-  color: #333;
-  background: none;
-  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  text-align: left;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  word-wrap: normal;
-  line-height: 1.4;
-
-  -moz-tab-size: 8;
-  -o-tab-size: 8;
-  tab-size: 8;
-
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
-  hyphens: none;
-}
-
-/* Code blocks */
-pre[class*="language-"] {
-  padding: .8em;
-  overflow: auto;
-  /* border: 1px solid #ddd; */
-  border-radius: 3px;
-  /* background: #fff; */
-  background: #f5f5f5;
-}
-
-/* Inline code */
-:not(pre) > code[class*="language-"] {
-  padding: .1em;
-  border-radius: .3em;
-  white-space: normal;
-  background: #f5f5f5;
-}
-
-.token.comment,
-.token.blockquote {
-  color: #969896;
-}
-
-.token.cdata {
-  color: #183691;
-}
-
-.token.doctype,
-.token.punctuation,
-.token.variable,
-.token.macro.property {
-  color: #333;
-}
-
-.token.operator,
-.token.important,
-.token.keyword,
-.token.rule,
-.token.builtin {
-  color: #a71d5d;
-}
-
-.token.string,
-.token.url,
-.token.regex,
-.token.attr-value {
-  color: #183691;
-}
-
-.token.property,
-.token.number,
-.token.boolean,
-.token.entity,
-.token.atrule,
-.token.constant,
-.token.symbol,
-.token.command,
-.token.code {
-  color: #0086b3;
-}
-
-.token.tag,
-.token.selector,
-.token.prolog {
-  color: #63a35c;
-}
-
-.token.function,
-.token.namespace,
-.token.pseudo-element,
-.token.class,
-.token.class-name,
-.token.pseudo-class,
-.token.id,
-.token.url-reference .token.variable,
-.token.attr-name {
-  color: #795da3;
-}
-
-.token.entity {
-  cursor: help;
-}
-
-.token.title,
-.token.title .token.punctuation {
-  font-weight: bold;
-  color: #1d3e81;
-}
-
-.token.list {
-  color: #ed6a43;
-}
-
-.token.inserted {
-  background-color: #eaffea;
-  color: #55a532;
-}
-
-.token.deleted {
-  background-color: #ffecec;
-  color: #bd2c00;
-}
-
-.token.bold {
-  font-weight: bold;
-}
-
-.token.italic {
-  font-style: italic;
-}
-
-
-/* JSON */
-.language-json .token.property {
-  color: #183691;
-}
-
-.language-markup .token.tag .token.punctuation {
-  color: #333;
-}
-
-/* CSS */
-code.language-css,
-.language-css .token.function {
-  color: #0086b3;
-}
-
-/* YAML */
-.language-yaml .token.atrule {
-  color: #63a35c;
-}
-
-code.language-yaml {
-  color: #183691;
-}
-
-/* Ruby */
-.language-ruby .token.function {
-  color: #333;
-}
-
-/* Markdown */
-.language-markdown .token.url {
-  color: #795da3;
-}
-
-/* Makefile */
-.language-makefile .token.symbol {
-  color: #795da3;
-}
-
-.language-makefile .token.variable {
-  color: #183691;
-}
-
-.language-makefile .token.builtin {
-  color: #0086b3;
-}
-
-/* Bash */
-.language-bash .token.keyword {
-  color: #0086b3;
-}
-
-/* highlight */
-pre[data-line] {
-  position: relative;
-  padding: 1em 0 1em 3em;
-}
-pre[data-line] .line-highlight-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: transparent;
-  display: block;
-  width: 100%;
-}
-
-pre[data-line] .line-highlight {
-  position: absolute;
-  left: 0;
-  right: 0;
-  padding: inherit 0;
-  margin-top: 1em;
-  background: hsla(24, 20%, 50%,.08);
-  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
-  pointer-events: none;
-  line-height: inherit;
-  white-space: pre;
-}
-
-pre[data-line] .line-highlight:before, 
-pre[data-line] .line-highlight[data-end]:after {
-  content: attr(data-start);
-  position: absolute;
-  top: .4em;
-  left: .6em;
-  min-width: 1em;
-  padding: 0 .5em;
-  background-color: hsla(24, 20%, 50%,.4);
-  color: hsl(24, 20%, 95%);
-  font: bold 65%/1.5 sans-serif;
-  text-align: center;
-  vertical-align: .3em;
-  border-radius: 999px;
-  text-shadow: none;
-  box-shadow: 0 1px white;
-}
-
-pre[data-line] .line-highlight[data-end]:after {
-  content: attr(data-end);
-  top: auto;
-  bottom: .4em;
-}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p,html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div{display:inline}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  300px/2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
-/* Please visit the URL below for more information: */
-/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
-
-      </style>
-    </head>
-    <body for="html-export">
-      <div class="mume markdown-preview  ">
-      <div><h1 class="mume-header" id="33-javascript-concepts-every-developer-should-know-%EF%B8%8F%EF%B8%8Fhttpsgithubcomleonardomso33-js-concepts"><a href="https://github.com/leonardomso/33-js-concepts">33 JavaScript Concepts Every Developer Should Know &#x1F913;&#xFE0F;&#x1F4AF;&#xFE0F;</a></h1>
-
-<h2 class="mume-header" id="1-call-stack-heap-queue-execution-context-event-loop">1. Call stack, Heap, Queue, Execution Context, Event Loop</h2>
-
-<ul>
-<li>
-<h3>Execution Context</h3>
-<ul>
-<li>Where Execution of code takes place</li>
-<li>it has 2 components
-<ul>
-<li>Memory : where varibales and functions are stored as key:value pair</li>
-<li>Code : wh - ere execution of code happens</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<h3>Call Stack</h3>
-<ul>
-<li>Data structure for recording fuction calls</li>
-<li>Max calls in chrome is 16,000 frames</li>
-</ul>
-</li>
-<li>
-<h3>Heap</h3>
-<ul>
-<li>Memory allocation to variables and objects happens in Queue</li>
-</ul>
-</li>
-<li>
-<h3>Queue</h3>
-<ul>
-<li>All the callback functions are stored here</li>
-</ul>
-</li>
-<li>
-<h3>Event Loop</h3>
-<ul>
-<li>Continuously monitors Call stack and Queue,</li>
-<li>If callstack becomes empty, it push the callback fn from Queue to call stack</li>
-</ul>
-</li>
-</ul>
-<h2 class="mume-header" id="2-data-types">2. Data Types</h2>
-
-<ul>
-<li>
-<h3>Primitive types</h3>
-<p>Stored in Stack memory, has fast access time &amp; less storage</p>
-<ul>
-<li>string : <code>&quot;hello&quot;</code></li>
-<li>number : <code>12, 3.1415</code></li>
-<li>boolean : <code>true, false</code></li>
-<li>undefined</li>
-<li>null</li>
-</ul>
-</li>
-<li>
-<h3>Reference/Non primitive types</h3>
-<p>Stored in Heap memory, has low access time but more storage</p>
-<ul>
-<li>Objects : <code>const person = { name: &quot;vikas&quot;, age: 22 } ;</code>
-<ul>
-<li>Array : <code>let arr = [1, 2, 3, 4] ;</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<h3>Variables</h3>
-<ul>
-<li>
-<p><strong>let</strong> : scope within current execution context i.e block and sub block have different scope</p>
-<pre data-role="codeBlock" data-info class="language-"><code>let x = 1;
-
-if (x === 1) {
-  let x = 2;
-
-  console.log(x); // 2
-}
-
-console.log(x); // 1
-</code></pre></li>
-<li>
-<p><strong>var</strong> : scope within the function i.e, withinn enitire enclosing function</p>
-<pre data-role="codeBlock" data-info class="language-"><code>var x = 1;
-
-function foo() {
-    var y = 2;
-
-    console.log(x); // 1 (function `foo` closes over `x`)
-    console.log(y); // 2 (`y` is in scope)
-}
-
-foo();
-
-console.log(x); // 1 (`x` is in scope)
-console.log(y); // ReferenceError, `y` is scoped to `foo`
-</code></pre></li>
-<li>
-<p><strong>const</strong> : blcok scope, value can&apos;t be changed once it&apos;s initiated.<br>
-<code>const pi = 3.24;</code></p>
-</li>
-</ul>
-</li>
-</ul>
-<h2 class="mume-header" id="3-value-types-and-reference-types">3. Value Types and Reference Types</h2>
-
-<ul>
-<li>
-<p>Premitives are copied/pass by their value</p>
-<pre data-role="codeBlock" data-info class="language-"><code>let number = 10;
-
-function foo(number) {
-    number++;
-}
-
-foo(number);
-
-console.log(number);   // 10;
-</code></pre></li>
-<li>
-<p>Objects are copied/pass by their reference</p>
-<pre data-role="codeBlock" data-info class="language-"><code>let obj = { value: 10 };
-
-function foo(obj) {
-    obj.value = 22;
-}
-
-foo(obj);
-
-console.log(obj);   // { value: 22 };
-</code></pre></li>
-</ul>
-<h2 class="mume-header" id="4-coercion-type-casting">4. Coercion (Type Casting)</h2>
-
-<ul>
-<li>
-<p>Javascript attempting to coerce an unexpected value type to the expected type i.e converts value from one type to another.</p>
-<pre data-role="codeBlock" data-info class="language-"><code>&apos;5&apos; + 5        // 55 , number `5` in interpreted as a string
-&apos;5&apos; - 5        // 0 , string `5` is interpreted as a number, works same for *, /, %
-true + 5       // 6 , `true` is interpreted to value `1`
-false + 5      // 5 , `false` is interpreted as value `0`
-</code></pre></li>
-<li>
-<p><strong>Implicit vs Explicit Coercion</strong></p>
-<table>
-<thead>
-<tr>
-<th>Implicit Coercion</th>
-<th>Explicit Coercion</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Values are&#xA0;converted between different types automatically</td>
-<td>Developer&#xA0;converts between types by writing the appropriate code</td>
-</tr>
-<tr>
-<td>Example :<code>5 + &apos;5&apos; // 55</code></td>
-<td>Example :<code>5 + Number(&apos;5&apos;) // 10</code></td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>
-<p>Only 3 types of conversion can be done in js</p>
-<ol>
-<li>to String<pre data-role="codeBlock" data-info class="language-"><code>  String(123)        // explicit
-  123 + &apos;&apos;           // implicit
-</code></pre></li>
-<li>to boolean<pre data-role="codeBlock" data-info class="language-"><code> Boolean(2)          // explicit
- if (2) { ... }      // implicit
-</code></pre></li>
-<li>to number<pre data-role="codeBlock" data-info class="language-"><code>Number(&apos;123&apos;)        // explicit
-5 - &apos;5&apos;              // implicit
-</code></pre></li>
-</ol>
-</li>
-<li>
-<p><strong>Type coercion for objects</strong> :</p>
-<ul>
-<li>Boolean conversion will always coerced the objects to <code>true</code></li>
-<li>String conversion can be done using <code>toString()</code></li>
-<li>Number conversion can be done using <code>valueOf()</code></li>
-</ul>
-</li>
-<li>
-<p><strong>Nominal Typing</strong> : Compatibility between objects determined based on their explicit type or name, rather than their structure.</p>
-</li>
-<li>
-<p><strong>Duck typing</strong> : Compatibility of objects is determined by whether they possess certain methods or properties, rather than their specific type or class.</p>
-</li>
-<li>
-<p><strong>Structural typing</strong> : A concept where the compatibility between objects is determined by their structure or shape, rather than their explicit type or name.</p>
-</li>
-</ul>
-<h2 class="mume-header" id="5--vs--vs-typeof">5. == vs === vs typeof</h2>
-
-<table>
-<thead>
-<tr>
-<th>==</th>
-<th>===</th>
-<th>typeof</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Checks if the values being compared are equal, performing type coercion if necessary.<br>Performs a loose comparison</td>
-<td>Checks if the values being compared are equal and of the same type, without performing any type coercion.<br>Performs a strict comparison</td>
-<td>Determine the type of a value or expression</td>
-</tr>
-<tr>
-<td>Returns boolean value</td>
-<td>Returns boolean value</td>
-<td>Returns a string representing the type of the operand.</td>
-</tr>
-<tr>
-<td>Example :<br><code>4 == &apos;4&apos; // true</code></td>
-<td>Example :<br><code>4 === &apos;4&apos; // fasle</code></td>
-<td>Example :<br><code>typeof &apos;hi&apos; // &apos;string&apos;</code></td>
-</tr>
-</tbody>
-</table>
-<h2 class="mume-header" id="6-scope">6. Scope</h2>
-
-<ul>
-<li>scope ~ availabiltiy</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>Global scope</th>
-<th>Function scope</th>
-<th>Block scope</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Variables declared outside of any functions or blocks.</td>
-<td>Variables declared within a function</td>
-<td>Variables declared within block (defined by curly braces)</td>
-<td></td>
-</tr>
-<tr>
-<td>accessed from anywhere within the code, including other functions and blocks.</td>
-<td>only accessible within that function and any nested functions inside it</td>
-<td>only accessible within the block.</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h2 class="mume-header" id="7-expression-vs-statement">7. Expression vs Statement</h2>
-
-<table>
-<thead>
-<tr>
-<th>Expression</th>
-<th>Statements</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Expressions evaluates to a single value</td>
-<td>Statemets are the instructions to perform task</td>
-</tr>
-<tr>
-<td>Example :<code>2+3*5</code> will evaluates to 17</td>
-<td>Example :<code>if (true) console.log(&quot;hi&quot;)</code></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><strong>Function expression :</strong>
-<ul>
-<li>function as part of an expresion</li>
-<li>Example : <code>let sum = funciton(){...}</code></li>
-</ul>
-</li>
-</ul>
-<h2 class="mume-header" id="8-iife-modules-and-namespaces">8. IIFE, Modules and Namespaces</h2>
-
-<ul>
-<li>
-<h3>IIFE (Immediately Invoked Function Expression)</h3>
-<ul>
-<li>
-<p>It&apos;s a self-executing anonymous function.</p>
-</li>
-<li>
-<p>Variables &amp; functions inside the IIFE are have local scope.</p>
-</li>
-<li>
-<p>Prevents global scope pollution</p>
-</li>
-<li>
-<p>Syntax :</p>
-<pre data-role="codeBlock" data-info class="language-"><code>(function () {
-    //code
-})()
-</code></pre></li>
-<li>
-<p>Example :</p>
-<pre data-role="codeBlock" data-info class="language-"><code>(function () {
-    let value = 10;
-})()
-</code></pre></li>
-</ul>
-</li>
-<li>
-<h3>Modules</h3>
-<ul>
-<li>
-<p>Allows to organize code in separate files.</p>
-</li>
-<li>
-<p>helps in writing reusable &amp; maintainable code.</p>
-</li>
-<li>
-<p>a module may contain variable, function or classes</p>
-</li>
-<li>
-<p><strong>Exporting Module</strong></p>
-<ul>
-<li>
-<p><code>export</code> keyword is used for named export</p>
-</li>
-<li>
-<p><code>export default</code> keyord is used to default export</p>
-</li>
-<li>
-<p>Example :</p>
-<pre data-role="codeBlock" data-info class="language-"><code>//module.js
-
-export default name = &quot;vikas&quot;;
-
-export function greet() {
-    console.log(&quot;Hi everyone&quot;);
-}
-</code></pre></li>
-</ul>
-</li>
-<li>
-<p><strong>Importing Module</strong></p>
-<ul>
-<li>
-<p><code>import</code> keyword can be used for importing</p>
-</li>
-<li>
-<p>Example :</p>
-<pre data-role="codeBlock" data-info class="language-"><code>//main.js
-
-import guestName from &quot;/module.js&quot;   //imports default export. i.e, name varibale
-
-import { greet } from &quot;/module.js&quot;     //imports greet from module
-
-console.log(guestName + &quot;says &quot; + greet());
-</code></pre></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<h3>Namespaces</h3>
-<ul>
-<li>
-<p>Containers uses to group &amp; oragnize the related variables, functions and objects.</p>
-</li>
-<li>
-<p>Helps in avoiding naming conflicts.</p>
-</li>
-<li>
-<p>Namspaces are not built into js. but it can be achieved using objects</p>
-</li>
-<li>
-<p>It can be accessed using the dot operator.</p>
-</li>
-<li>
-<p>Example :</p>
-<pre data-role="codeBlock" data-info class="language-"><code>var marksNamespace = {
-    mark1: 34,
-    mark2: 45,
-    avg: function () {
-        return (this.mark1 + this.mark2) / 2;
-    }
-}
-
-console.log(marksNamespace.mark1);      //accessing the mark1 namespace
-console.log(marksNamespace.avg());      //accessing the avg namespace, which calls the associated function
-</code></pre></li>
-</ul>
-</li>
-</ul>
-<h2 class="mume-header" id="9-message-queue-and-event-loop">9. Message Queue and Event Loop</h2>
-
-<ul>
-<li>When asynchronous operations such as newtwork request or timer is encountered, it&apos;s associated callback is placed in the queue in a fifo fashion,</li>
-<li>After the execution of synchronous code, the event loop process the queue.</li>
-<li>Event loop looks for pending task in queue, if yes then puts that task inside the stack.</li>
-<li>Asynchronous operations may include <code>eventlisteners</code> , <code>setTimeout</code> or any api request etc</li>
-</ul>
-<h2 class="mume-header" id="10-settimeout-setinterval-and-requestanimationframe">10. setTimeout, setInterval and requestAnimationFrame</h2>
-
-<ul>
-<li>
-<h3>setTimeout vs setInterval</h3>
-<table>
-<thead>
-<tr>
-<th>setTimeout</th>
-<th>setInterval</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Executes a specified piece of code or a function once after a given delay.</td>
-<td>Executes a specified piece of code or a function repeatedly at a given interval.</td>
-</tr>
-<tr>
-<td>Syntax :<code>setTimeout(callback_fn, delay, ...parameters)</code></td>
-<td>Syntax :<code>setInterval(callback_fn, delay, ...parameters)</code></td>
-</tr>
-<tr>
-<td>Example :<code>setTimeout(function(){console.log(&quot;hello&quot;);},1000)</code> will print <code>hello</code> once after 1 second of program&#xA0;execution</td>
-<td>Eample :<code>setInterval(function(){console.log(&quot;hello&quot;);},1000)</code> will print <code>hello</code> every 1 second</td>
-</tr>
-<tr>
-<td>Execution can be terminated with <code>clearTimeout()</code></td>
-<td>Execution can be terminated with <code>clearInterval()</code></td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>
-<h3>requestAnimationFrame</h3>
-<ul>
-<li>used to schedule a function to execute before updating visual elements in the webpage (called repainting)</li>
-<li>Syntax : <code>requestAnimationFrame(callback_fn)</code></li>
-</ul>
-</li>
-</ul>
-<h2 class="mume-header" id="11-javascript-engines">11. JavaScript Engines</h2>
-
-<ul>
-<li>
-<p>for running Js, we need a Js runtime environment.</p>
-</li>
-<li>
-<p>Js runtime envirnoment consist of JS Engine, API, event loop, queues....</p>
-</li>
-<li>
-<p>v8 engine (written in c++) is most famously used js engine, in chrome &amp; node js</p>
-</li>
-<li>
-<p>3 process happens inside the js engine</p>
-<ul>
-<li>PARSING : code -&gt; token -&gt; abstract syntax tree,</li>
-<li>COMPILATION (JIT) : AST-&gt; byte code &amp; optimize</li>
-<li>EXECUTION : uses memory heap &amp; call stack in the process</li>
-</ul>
-</li>
-<li>
-<p>Mark &amp; sweep algorithm is used for grabage collection</p>
-</li>
-</ul>
-<h2 class="mume-header" id="12-bitwise-operators">12. Bitwise Operators</h2>
-
-<ul>
-<li>perofrms operations on bits (0&apos;s and 1&apos;s)</li>
-<li><strong>NOT <code>~</code></strong> :
-<ul>
-<li>works on single bit, replaces 0 with 1 and 1 with 0</li>
-<li>Example : <code>~5</code> -&gt; <code>~ (101)</code>-&gt;<code>010</code></li>
-</ul>
-</li>
-<li><strong>OR <code>|</code></strong> :
-<ul>
-<li>either of the bit is 1 =&gt; result 1</li>
-<li>Example : <code>5 | 6</code> -&gt; <code>101 | 110</code> -&gt; <code>111</code> -&gt; <code>7</code></li>
-</ul>
-</li>
-<li><strong>AND <code>&amp;</code></strong> :
-<ul>
-<li>both bits are <code>1</code> =&gt;result 1</li>
-<li>Example : <code>7 &amp; 6</code>-&gt;<code>111 &amp; 110</code>-&gt;<code>110</code>-&gt;<code>6</code></li>
-</ul>
-</li>
-<li><strong>XOR <code>^</code></strong> :
-<ul>
-<li>one bit is <code>1</code> &amp; other bit is <code>0</code> -&gt; result <code>1</code></li>
-<li>Exmple : <code>5 ^ 6</code> -&gt; <code>101 ^ 110</code> -&gt; <code>011</code> -&gt;<code>3</code></li>
-</ul>
-</li>
-<li><strong>Leftshift <code>&lt;&lt;</code></strong> :
-<ul>
-<li>shifts the number to left by specified number, works on single bit</li>
-<li>Example : <code>5&lt;&lt;2</code> -&gt; <code>0000 0101</code> -&gt; <code>0001 0100</code> -&gt;20</li>
-</ul>
-</li>
-<li><strong>Rightshift <code>&gt;&gt;</code></strong> :
-<ul>
-<li>shifts the number to left by specified number, works on single bit</li>
-<li>Example <code>20&gt;&gt;2</code> -&gt; <code>001 0100</code> -&gt; <code>0000 0101</code> -&gt;5</li>
-</ul>
-</li>
-</ul>
-<h2 class="mume-header" id="13-dom">13. DOM</h2>
-
-<ul>
-<li>
-<p>Document Object Model is a tree like representation of html document</p>
-</li>
-<li>
-<p>Each element is a node. HTML element is the root of the DOM</p>
-</li>
-<li>
-<p><code>console.dir(document)</code> will print all the element &amp; their properties</p>
-</li>
-<li>
-<h3>Selectors</h3>
-<table>
-<thead>
-<tr>
-<th>Selector</th>
-<th>CSS</th>
-<th>Js</th>
-<th>JQuery</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Id</td>
-<td><code>#id</code></td>
-<td><code>document.getElementById(&apos;id&apos;)</code>&#xA0;<br><code>document.querySelector(&apos;#id&apos;)</code></td>
-<td><code>$(&apos;#id&apos;)</code></td>
-</tr>
-<tr>
-<td>Class name</td>
-<td><code>.className</code></td>
-<td><code>document.getElementsByClassName(&apos;className&apos;)</code>&#xA0;<br><code>document.querySelectorAll(&apos;className&apos;)</code></td>
-<td><code>$(&apos;.className&apos;)</code></td>
-</tr>
-<tr>
-<td>Tag name</td>
-<td><code>tagName</code></td>
-<td><code>document.getElementsByTagName(tagName)</code><br><code>document.querySelectorAll(tagName)</code></td>
-<td><code>$(&apos;tagName&apos;)</code></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><code>querySelector()</code> returns the first element</li>
-<li><code>querySelectorAll()</code> returns NodeList of elements</li>
-<li>psuedo classes like <code>:nth-child()</code> , <code>::before</code> , <code>::placeholder</code> can also be used with selectors for selecting the html elements</li>
-</ul>
-</li>
-<li>
-<h3>Node methods</h3>
-<p><code>parentNode()</code> , <code>parentElement()</code> , <code>childNodes()</code> , <code>children()</code> , <code>firstChild()</code> , <code>firstElementChild()</code> , <code>lastChild()</code> , <code>lastElementChild()</code> , <code>nextSibling()</code> , <code>nextElementSibling()</code> , <code>previousSibling()</code> , <code>previousElementSibling()</code></p>
-<ul>
-<li>methods that have the keyword <code>Element</code> returns only Element nodes,</li>
-<li>methods without keyowrd <code>Element</code> returns all kind of nodes i.e Element node, text node, comment node etc.</li>
-</ul>
-</li>
-<li>
-<p>Create Element : <code>createElement(tagName)</code></p>
-</li>
-<li>
-<p>Create text node : <code>createTextNode(&apos;text&apos;)</code></p>
-</li>
-<li>
-<p>Add element to the document : <code>appendChild()</code> , <code>prependChild()</code></p>
-</li>
-<li></li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox" checked> closure</p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox" checked> hoisting</p>
-</li>
-</ul>
-</div>
-      </div>
-      
-      
-    
-    
-    
-    
-    
-    
-    
-    
-  
-    </body></html>
+      code[class*="language-"],
+      pre[class*="language-"] {
+        color: #333;
+        background: none;
+        font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+        text-align: left;
+        white-space: pre;
+        word-spacing: normal;
+        word-break: normal;
+        word-wrap: normal;
+        line-height: 1.4;
+
+        -moz-tab-size: 8;
+        -o-tab-size: 8;
+        tab-size: 8;
+
+        -webkit-hyphens: none;
+        -moz-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+      }
+
+      /* Code blocks */
+      pre[class*="language-"] {
+        padding: 0.8em;
+        overflow: auto;
+        /* border: 1px solid #ddd; */
+        border-radius: 3px;
+        /* background: #fff; */
+        background: #f5f5f5;
+      }
+
+      /* Inline code */
+      :not(pre) > code[class*="language-"] {
+        padding: 0.1em;
+        border-radius: 0.3em;
+        white-space: normal;
+        background: #f5f5f5;
+      }
+
+      .token.comment,
+      .token.blockquote {
+        color: #969896;
+      }
+
+      .token.cdata {
+        color: #183691;
+      }
+
+      .token.doctype,
+      .token.punctuation,
+      .token.variable,
+      .token.macro.property {
+        color: #333;
+      }
+
+      .token.operator,
+      .token.important,
+      .token.keyword,
+      .token.rule,
+      .token.builtin {
+        color: #a71d5d;
+      }
+
+      .token.string,
+      .token.url,
+      .token.regex,
+      .token.attr-value {
+        color: #183691;
+      }
+
+      .token.property,
+      .token.number,
+      .token.boolean,
+      .token.entity,
+      .token.atrule,
+      .token.constant,
+      .token.symbol,
+      .token.command,
+      .token.code {
+        color: #0086b3;
+      }
+
+      .token.tag,
+      .token.selector,
+      .token.prolog {
+        color: #63a35c;
+      }
+
+      .token.function,
+      .token.namespace,
+      .token.pseudo-element,
+      .token.class,
+      .token.class-name,
+      .token.pseudo-class,
+      .token.id,
+      .token.url-reference .token.variable,
+      .token.attr-name {
+        color: #795da3;
+      }
+
+      .token.entity {
+        cursor: help;
+      }
+
+      .token.title,
+      .token.title .token.punctuation {
+        font-weight: bold;
+        color: #1d3e81;
+      }
+
+      .token.list {
+        color: #ed6a43;
+      }
+
+      .token.inserted {
+        background-color: #eaffea;
+        color: #55a532;
+      }
+
+      .token.deleted {
+        background-color: #ffecec;
+        color: #bd2c00;
+      }
+
+      .token.bold {
+        font-weight: bold;
+      }
+
+      .token.italic {
+        font-style: italic;
+      }
+
+      /* JSON */
+      .language-json .token.property {
+        color: #183691;
+      }
+
+      .language-markup .token.tag .token.punctuation {
+        color: #333;
+      }
+
+      /* CSS */
+      code.language-css,
+      .language-css .token.function {
+        color: #0086b3;
+      }
+
+      /* YAML */
+      .language-yaml .token.atrule {
+        color: #63a35c;
+      }
+
+      code.language-yaml {
+        color: #183691;
+      }
+
+      /* Ruby */
+      .language-ruby .token.function {
+        color: #333;
+      }
+
+      /* Markdown */
+      .language-markdown .token.url {
+        color: #795da3;
+      }
+
+      /* Makefile */
+      .language-makefile .token.symbol {
+        color: #795da3;
+      }
+
+      .language-makefile .token.variable {
+        color: #183691;
+      }
+
+      .language-makefile .token.builtin {
+        color: #0086b3;
+      }
+
+      /* Bash */
+      .language-bash .token.keyword {
+        color: #0086b3;
+      }
+
+      /* highlight */
+      pre[data-line] {
+        position: relative;
+        padding: 1em 0 1em 3em;
+      }
+      pre[data-line] .line-highlight-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: transparent;
+        display: block;
+        width: 100%;
+      }
+
+      pre[data-line] .line-highlight {
+        position: absolute;
+        left: 0;
+        right: 0;
+        padding: inherit 0;
+        margin-top: 1em;
+        background: hsla(24, 20%, 50%, 0.08);
+        background: linear-gradient(
+          to right,
+          hsla(24, 20%, 50%, 0.1) 70%,
+          hsla(24, 20%, 50%, 0)
+        );
+        pointer-events: none;
+        line-height: inherit;
+        white-space: pre;
+      }
+
+      pre[data-line] .line-highlight:before,
+      pre[data-line] .line-highlight[data-end]:after {
+        content: attr(data-start);
+        position: absolute;
+        top: 0.4em;
+        left: 0.6em;
+        min-width: 1em;
+        padding: 0 0.5em;
+        background-color: hsla(24, 20%, 50%, 0.4);
+        color: hsl(24, 20%, 95%);
+        font: bold 65%/1.5 sans-serif;
+        text-align: center;
+        vertical-align: 0.3em;
+        border-radius: 999px;
+        text-shadow: none;
+        box-shadow: 0 1px white;
+      }
+
+      pre[data-line] .line-highlight[data-end]:after {
+        content: attr(data-end);
+        top: auto;
+        bottom: 0.4em;
+      }
+      html body {
+        font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans,
+          sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        color: #333;
+        background-color: #fff;
+        overflow: initial;
+        box-sizing: border-box;
+        word-wrap: break-word;
+      }
+      html body > :first-child {
+        margin-top: 0;
+      }
+      html body h1,
+      html body h2,
+      html body h3,
+      html body h4,
+      html body h5,
+      html body h6 {
+        line-height: 1.2;
+        margin-top: 1em;
+        margin-bottom: 16px;
+        color: #000;
+      }
+      html body h1 {
+        font-size: 2.25em;
+        font-weight: 300;
+        padding-bottom: 0.3em;
+      }
+      html body h2 {
+        font-size: 1.75em;
+        font-weight: 400;
+        padding-bottom: 0.3em;
+      }
+      html body h3 {
+        font-size: 1.5em;
+        font-weight: 500;
+      }
+      html body h4 {
+        font-size: 1.25em;
+        font-weight: 600;
+      }
+      html body h5 {
+        font-size: 1.1em;
+        font-weight: 600;
+      }
+      html body h6 {
+        font-size: 1em;
+        font-weight: 600;
+      }
+      html body h1,
+      html body h2,
+      html body h3,
+      html body h4,
+      html body h5 {
+        font-weight: 600;
+      }
+      html body h5 {
+        font-size: 1em;
+      }
+      html body h6 {
+        color: #5c5c5c;
+      }
+      html body strong {
+        color: #000;
+      }
+      html body del {
+        color: #5c5c5c;
+      }
+      html body a:not([href]) {
+        color: inherit;
+        text-decoration: none;
+      }
+      html body a {
+        color: #08c;
+        text-decoration: none;
+      }
+      html body a:hover {
+        color: #00a3f5;
+        text-decoration: none;
+      }
+      html body img {
+        max-width: 100%;
+      }
+      html body > p {
+        margin-top: 0;
+        margin-bottom: 16px;
+        word-wrap: break-word;
+      }
+      html body > ul,
+      html body > ol {
+        margin-bottom: 16px;
+      }
+      html body ul,
+      html body ol {
+        padding-left: 2em;
+      }
+      html body ul.no-list,
+      html body ol.no-list {
+        padding: 0;
+        list-style-type: none;
+      }
+      html body ul ul,
+      html body ul ol,
+      html body ol ol,
+      html body ol ul {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      html body li {
+        margin-bottom: 0;
+      }
+      html body li.task-list-item {
+        list-style: none;
+      }
+      html body li > p {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      html body .task-list-item-checkbox {
+        margin: 0 0.2em 0.25em -1.8em;
+        vertical-align: middle;
+      }
+      html body .task-list-item-checkbox:hover {
+        cursor: pointer;
+      }
+      html body blockquote {
+        margin: 16px 0;
+        font-size: inherit;
+        padding: 0 15px;
+        color: #5c5c5c;
+        background-color: #f0f0f0;
+        border-left: 4px solid #d6d6d6;
+      }
+      html body blockquote > :first-child {
+        margin-top: 0;
+      }
+      html body blockquote > :last-child {
+        margin-bottom: 0;
+      }
+      html body hr {
+        height: 4px;
+        margin: 32px 0;
+        background-color: #d6d6d6;
+        border: 0 none;
+      }
+      html body table {
+        margin: 10px 0 15px 0;
+        border-collapse: collapse;
+        border-spacing: 0;
+        display: block;
+        width: 100%;
+        overflow: auto;
+        word-break: normal;
+        word-break: keep-all;
+      }
+      html body table th {
+        font-weight: bold;
+        color: #000;
+      }
+      html body table td,
+      html body table th {
+        border: 1px solid #d6d6d6;
+        padding: 6px 13px;
+      }
+      html body dl {
+        padding: 0;
+      }
+      html body dl dt {
+        padding: 0;
+        margin-top: 16px;
+        font-size: 1em;
+        font-style: italic;
+        font-weight: bold;
+      }
+      html body dl dd {
+        padding: 0 16px;
+        margin-bottom: 16px;
+      }
+      html body code {
+        font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+        font-size: 0.85em !important;
+        color: #000;
+        background-color: #f0f0f0;
+        border-radius: 3px;
+        padding: 0.2em 0;
+      }
+      html body code::before,
+      html body code::after {
+        letter-spacing: -0.2em;
+        content: "\00a0";
+      }
+      html body pre > code {
+        padding: 0;
+        margin: 0;
+        font-size: 0.85em !important;
+        word-break: normal;
+        white-space: pre;
+        background: transparent;
+        border: 0;
+      }
+      html body .highlight {
+        margin-bottom: 16px;
+      }
+      html body .highlight pre,
+      html body pre {
+        padding: 1em;
+        overflow: auto;
+        font-size: 0.85em !important;
+        line-height: 1.45;
+        border: #d6d6d6;
+        border-radius: 3px;
+      }
+      html body .highlight pre {
+        margin-bottom: 0;
+        word-break: normal;
+      }
+      html body pre code,
+      html body pre tt {
+        display: inline;
+        max-width: initial;
+        padding: 0;
+        margin: 0;
+        overflow: initial;
+        line-height: inherit;
+        word-wrap: normal;
+        background-color: transparent;
+        border: 0;
+      }
+      html body pre code:before,
+      html body pre tt:before,
+      html body pre code:after,
+      html body pre tt:after {
+        content: normal;
+      }
+      html body p,
+      html body blockquote,
+      html body ul,
+      html body ol,
+      html body dl,
+      html body pre {
+        margin-top: 0;
+        margin-bottom: 16px;
+      }
+      html body kbd {
+        color: #000;
+        border: 1px solid #d6d6d6;
+        border-bottom: 2px solid #c7c7c7;
+        padding: 2px 4px;
+        background-color: #f0f0f0;
+        border-radius: 3px;
+      }
+      @media print {
+        html body {
+          background-color: #fff;
+        }
+        html body h1,
+        html body h2,
+        html body h3,
+        html body h4,
+        html body h5,
+        html body h6 {
+          color: #000;
+          page-break-after: avoid;
+        }
+        html body blockquote {
+          color: #5c5c5c;
+        }
+        html body pre {
+          page-break-inside: avoid;
+        }
+        html body table {
+          display: table;
+        }
+        html body img {
+          display: block;
+          max-width: 100%;
+          max-height: 100%;
+        }
+        html body pre,
+        html body code {
+          word-wrap: break-word;
+          white-space: pre;
+        }
+      }
+      .markdown-preview {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+      }
+      .markdown-preview .pagebreak,
+      .markdown-preview .newpage {
+        page-break-before: always;
+      }
+      .markdown-preview pre.line-numbers {
+        position: relative;
+        padding-left: 3.8em;
+        counter-reset: linenumber;
+      }
+      .markdown-preview pre.line-numbers > code {
+        position: relative;
+      }
+      .markdown-preview pre.line-numbers .line-numbers-rows {
+        position: absolute;
+        pointer-events: none;
+        top: 1em;
+        font-size: 100%;
+        left: 0;
+        width: 3em;
+        letter-spacing: -1px;
+        border-right: 1px solid #999;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      .markdown-preview pre.line-numbers .line-numbers-rows > span {
+        pointer-events: none;
+        display: block;
+        counter-increment: linenumber;
+      }
+      .markdown-preview pre.line-numbers .line-numbers-rows > span:before {
+        content: counter(linenumber);
+        color: #999;
+        display: block;
+        padding-right: 0.8em;
+        text-align: right;
+      }
+      .markdown-preview .mathjax-exps .MathJax_Display {
+        text-align: center !important;
+      }
+      .markdown-preview:not([for="preview"]) .code-chunk .btn-group {
+        display: none;
+      }
+      .markdown-preview:not([for="preview"]) .code-chunk .status {
+        display: none;
+      }
+      .markdown-preview:not([for="preview"]) .code-chunk .output-div {
+        margin-bottom: 16px;
+      }
+      .markdown-preview .md-toc {
+        padding: 0;
+      }
+      .markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link {
+        display: inline;
+        padding: 0.25rem 0;
+      }
+      .markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p,
+      .markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div {
+        display: inline;
+      }
+      .markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link {
+        font-weight: 800;
+      }
+      .scrollbar-style::-webkit-scrollbar {
+        width: 8px;
+      }
+      .scrollbar-style::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background-color: transparent;
+      }
+      .scrollbar-style::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        background-color: rgba(150, 150, 150, 0.66);
+        border: 4px solid rgba(150, 150, 150, 0.66);
+        background-clip: content-box;
+      }
+      html body[for="html-export"]:not([data-presentation-mode]) {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        margin: 0;
+        padding: 0;
+        overflow: auto;
+      }
+      html
+        body[for="html-export"]:not([data-presentation-mode])
+        .markdown-preview {
+        position: relative;
+        top: 0;
+      }
+      @media screen and (min-width: 914px) {
+        html
+          body[for="html-export"]:not([data-presentation-mode])
+          .markdown-preview {
+          padding: 2em calc(50% - 457px + 2em);
+        }
+      }
+      @media screen and (max-width: 914px) {
+        html
+          body[for="html-export"]:not([data-presentation-mode])
+          .markdown-preview {
+          padding: 2em;
+        }
+      }
+      @media screen and (max-width: 450px) {
+        html
+          body[for="html-export"]:not([data-presentation-mode])
+          .markdown-preview {
+          font-size: 14px !important;
+          padding: 1em;
+        }
+      }
+      @media print {
+        html
+          body[for="html-export"]:not([data-presentation-mode])
+          #sidebar-toc-btn {
+          display: none;
+        }
+      }
+      html
+        body[for="html-export"]:not([data-presentation-mode])
+        #sidebar-toc-btn {
+        position: fixed;
+        bottom: 8px;
+        left: 8px;
+        font-size: 28px;
+        cursor: pointer;
+        color: inherit;
+        z-index: 99;
+        width: 32px;
+        text-align: center;
+        opacity: 0.4;
+      }
+      html
+        body[for="html-export"]:not(
+          [data-presentation-mode]
+        )[html-show-sidebar-toc]
+        #sidebar-toc-btn {
+        opacity: 1;
+      }
+      html
+        body[for="html-export"]:not(
+          [data-presentation-mode]
+        )[html-show-sidebar-toc]
+        .md-sidebar-toc {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 300px;
+        height: 100%;
+        padding: 32px 0 48px 0;
+        font-size: 14px;
+        box-shadow: 0 0 4px rgba(150, 150, 150, 0.33);
+        box-sizing: border-box;
+        overflow: auto;
+        background-color: inherit;
+      }
+      html
+        body[for="html-export"]:not(
+          [data-presentation-mode]
+        )[html-show-sidebar-toc]
+        .md-sidebar-toc::-webkit-scrollbar {
+        width: 8px;
+      }
+      html
+        body[for="html-export"]:not(
+          [data-presentation-mode]
+        )[html-show-sidebar-toc]
+        .md-sidebar-toc::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background-color: transparent;
+      }
+      html
+        body[for="html-export"]:not(
+          [data-presentation-mode]
+        )[html-show-sidebar-toc]
+        .md-sidebar-toc::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        background-color: rgba(150, 150, 150, 0.66);
+        border: 4px solid rgba(150, 150, 150, 0.66);
+        background-clip: content-box;
+      }
+      html
+        body[for="html-export"]:not(
+          [data-presentation-mode]
+        )[html-show-sidebar-toc]
+        .md-sidebar-toc
+        a {
+        text-decoration: none;
+      }
+      html
+        body[for="html-export"]:not(
+          [data-presentation-mode]
+        )[html-show-sidebar-toc]
+        .md-sidebar-toc
+        .md-toc {
+        padding: 0 16px;
+      }
+      html
+        body[for="html-export"]:not(
+          [data-presentation-mode]
+        )[html-show-sidebar-toc]
+        .md-sidebar-toc
+        .md-toc
+        .md-toc-link-wrapper
+        .md-toc-link {
+        display: inline;
+        padding: 0.25rem 0;
+      }
+      html
+        body[for="html-export"]:not(
+          [data-presentation-mode]
+        )[html-show-sidebar-toc]
+        .md-sidebar-toc
+        .md-toc
+        .md-toc-link-wrapper
+        .md-toc-link
+        p,
+      html
+        body[for="html-export"]:not(
+          [data-presentation-mode]
+        )[html-show-sidebar-toc]
+        .md-sidebar-toc
+        .md-toc
+        .md-toc-link-wrapper
+        .md-toc-link
+        div {
+        display: inline;
+      }
+      html
+        body[for="html-export"]:not(
+          [data-presentation-mode]
+        )[html-show-sidebar-toc]
+        .md-sidebar-toc
+        .md-toc
+        .md-toc-link-wrapper.highlighted
+        .md-toc-link {
+        font-weight: 800;
+      }
+      html
+        body[for="html-export"]:not(
+          [data-presentation-mode]
+        )[html-show-sidebar-toc]
+        .markdown-preview {
+        left: 300px;
+        width: calc(100% - 300px);
+        padding: 2em calc(50% - 457px - 300px / 2);
+        margin: 0;
+        box-sizing: border-box;
+      }
+      @media screen and (max-width: 1274px) {
+        html
+          body[for="html-export"]:not(
+            [data-presentation-mode]
+          )[html-show-sidebar-toc]
+          .markdown-preview {
+          padding: 2em;
+        }
+      }
+      @media screen and (max-width: 450px) {
+        html
+          body[for="html-export"]:not(
+            [data-presentation-mode]
+          )[html-show-sidebar-toc]
+          .markdown-preview {
+          width: 100%;
+        }
+      }
+      html
+        body[for="html-export"]:not([data-presentation-mode]):not(
+          [html-show-sidebar-toc]
+        )
+        .markdown-preview {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      html
+        body[for="html-export"]:not([data-presentation-mode]):not(
+          [html-show-sidebar-toc]
+        )
+        .md-sidebar-toc {
+        display: none;
+      }
+      /* Please visit the URL below for more information: */
+      /*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+    </style>
+  </head>
+  <body for="html-export">
+    <div class="mume markdown-preview">
+      <h1
+        class="mume-header"
+        id="33-javascript-concepts-every-developer-should-know-%EF%B8%8F%EF%B8%8Fhttpsgithubcomleonardomso33-js-concepts"
+      >
+        <a href="https://github.com/leonardomso/33-js-concepts"
+          >33 JavaScript Concepts Every Developer Should Know
+          &#x1F913;&#xFE0F;&#x1F4AF;&#xFE0F;</a
+        >
+      </h1>
+
+      <h2
+        class="mume-header"
+        id="1-call-stack-heap-queue-execution-context-event-loop"
+      >
+        1. Call stack, Heap, Queue, Execution Context, Event Loop
+      </h2>
+
+      <ul>
+        <li>
+          <h3>Execution Context</h3>
+          <ul>
+            <li>Where Execution of code takes place</li>
+            <li>
+              it has 2 components
+              <ul>
+                <li>
+                  Memory : where variables and functions are stored as key:value
+                  pair
+                </li>
+                <li>Code : wh - ere execution of code happens</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h3>Call Stack</h3>
+          <ul>
+            <li>Data structure for recording function calls</li>
+            <li>Max calls in chrome is 16,000 frames</li>
+          </ul>
+        </li>
+        <li>
+          <h3>Heap</h3>
+          <ul>
+            <li>Memory allocation to variables and objects happens in Queue</li>
+          </ul>
+        </li>
+        <li>
+          <h3>Queue</h3>
+          <ul>
+            <li>All the callback functions are stored here</li>
+          </ul>
+        </li>
+        <li>
+          <h3>Event Loop</h3>
+          <ul>
+            <li>Continuously monitors Call stack and Queue,</li>
+            <li>
+              If call stack becomes empty, it push the callback fn from Queue to
+              call stack
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h2 class="mume-header" id="2-data-types">2. Data Types</h2>
+
+      <ul>
+        <li>
+          <h3>Primitive types</h3>
+          <p>Stored in Stack memory, has fast access time &amp; less storage</p>
+          <ul>
+            <li>string : <code>&quot;hello&quot;</code></li>
+            <li>number : <code>12, 3.1415</code></li>
+            <li>boolean : <code>true, false</code></li>
+            <li>undefined</li>
+            <li>null</li>
+          </ul>
+        </li>
+        <li>
+          <h3>Reference/Non primitive types</h3>
+          <p>Stored in Heap memory, has low access time but more storage</p>
+          <ul>
+            <li>
+              Objects :
+              <code>const person = { name: &quot;vikas&quot;, age: 22 } ;</code>
+              <ul>
+                <li>Array : <code>let arr = [1, 2, 3, 4] ;</code></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h3>Variables</h3>
+          <ul>
+            <li>
+              <p>
+                <strong>let</strong> : scope within current execution context
+                i.e block and sub block have different scope
+              </p>
+              <pre
+                data-role="codeBlock"
+                data-info="js"
+                class="language-javascript"
+              ><span class="token keyword keyword-let">let</span> x <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+<span class="token keyword control-flow keyword-if">if</span> <span class="token punctuation">(</span>x <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword keyword-let">let</span> x <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+
+  <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 2</span>
+<span class="token punctuation">}</span>
+
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1</span>
+</pre>
+            </li>
+            <li>
+              <p>
+                <strong>var</strong> : scope within the function i.e, within
+                entire enclosing function
+              </p>
+              <pre
+                data-role="codeBlock"
+                data-info="js"
+                class="language-javascript"
+              ><span class="token keyword keyword-var">var</span> x <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-function">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword keyword-var">var</span> y <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+
+  <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1 (function `foo` closes over `x`)</span>
+  <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 2 (`y` is in scope)</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1 (`x` is in scope)</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ReferenceError, `y` is scoped to `foo`</span>
+</pre>
+            </li>
+            <li>
+              <p>
+                <strong>const</strong> : block scope, value can&apos;t be
+                changed once it&apos;s initiated.<br />
+                <code>const pi = 3.24;</code>
+              </p>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h2 class="mume-header" id="3-value-types-and-reference-types">
+        3. Value Types and Reference Types
+      </h2>
+
+      <ul>
+        <li>
+          <p>Primitives are copied/pass by their value</p>
+          <pre
+            data-role="codeBlock"
+            data-info="js"
+            class="language-javascript"
+          ><span class="token keyword keyword-let">let</span> number <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-function">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token parameter">number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  number<span class="token operator">++</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">foo</span><span class="token punctuation">(</span>number<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>number<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 10;</span>
+</pre>
+        </li>
+        <li>
+          <p>Objects are copied/pass by their reference</p>
+          <pre
+            data-role="codeBlock"
+            data-info="js"
+            class="language-javascript"
+          ><span class="token keyword keyword-let">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> value<span class="token operator">:</span> <span class="token number">10</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-function">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  obj<span class="token punctuation">.</span><span class="token property-access">value</span> <span class="token operator">=</span> <span class="token number">22</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">foo</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// { value: 22 };</span>
+</pre>
+        </li>
+      </ul>
+      <h2 class="mume-header" id="4-coercion-type-casting">
+        4. Coercion (Type Casting)
+      </h2>
+
+      <ul>
+        <li>
+          <p>
+            Javascript attempting to coerce an unexpected value type to the
+            expected type i.e converts value from one type to another.
+          </p>
+          <pre
+            data-role="codeBlock"
+            data-info="js"
+            class="language-javascript"
+          ><span class="token string">&quot;5&quot;</span> <span class="token operator">+</span> <span class="token number">5</span><span class="token punctuation">;</span> <span class="token comment">// 55 , number `5` in interpreted as a string</span>
+<span class="token string">&quot;5&quot;</span> <span class="token operator">-</span> <span class="token number">5</span><span class="token punctuation">;</span> <span class="token comment">// 0 , string `5` is interpreted as a number, works same for *, /, %</span>
+<span class="token boolean">true</span> <span class="token operator">+</span> <span class="token number">5</span><span class="token punctuation">;</span> <span class="token comment">// 6 , `true` is interpreted to value `1`</span>
+<span class="token boolean">false</span> <span class="token operator">+</span> <span class="token number">5</span><span class="token punctuation">;</span> <span class="token comment">// 5 , `false` is interpreted as value `0`</span>
+</pre>
+        </li>
+        <li>
+          <p><strong>Implicit vs Explicit Coercion</strong></p>
+          <table>
+            <thead>
+              <tr>
+                <th>Implicit Coercion</th>
+                <th>Explicit Coercion</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  Values are&#xA0;converted between different types
+                  automatically
+                </td>
+                <td>
+                  Developer&#xA0;converts between types by writing the
+                  appropriate code
+                </td>
+              </tr>
+              <tr>
+                <td>Example :<code>5 + &apos;5&apos; // 55</code></td>
+                <td>Example :<code>5 + Number(&apos;5&apos;) // 10</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li>
+          <p>Only 3 types of conversion can be done in js</p>
+          <ol>
+            <li>
+              to String
+              <pre
+                data-role="codeBlock"
+                data-info="js"
+                class="language-javascript"
+              ><span class="token known-class-name class-name">String</span><span class="token punctuation">(</span><span class="token number">123</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// explicit</span>
+<span class="token number">123</span> <span class="token operator">+</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">;</span> <span class="token comment">// implicit</span>
+</pre>
+            </li>
+            <li>
+              to boolean
+              <pre
+                data-role="codeBlock"
+                data-info="js"
+                class="language-javascript"
+              > <span class="token known-class-name class-name">Boolean</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>          <span class="token comment">// explicit</span>
+ <span class="token keyword control-flow keyword-if">if</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token spread operator">...</span> <span class="token punctuation">}</span>      <span class="token comment">// implicit</span>
+</pre>
+            </li>
+            <li>
+              to number
+              <pre
+                data-role="codeBlock"
+                data-info="js"
+                class="language-javascript"
+              ><span class="token known-class-name class-name">Number</span><span class="token punctuation">(</span><span class="token string">&quot;123&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// explicit</span>
+<span class="token number">5</span> <span class="token operator">-</span> <span class="token string">&quot;5&quot;</span><span class="token punctuation">;</span> <span class="token comment">// implicit</span>
+</pre>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <p><strong>Type coercion for objects</strong> :</p>
+          <ul>
+            <li>
+              Boolean conversion will always coerced the objects to
+              <code>true</code>
+            </li>
+            <li>String conversion can be done using <code>toString()</code></li>
+            <li>Number conversion can be done using <code>valueOf()</code></li>
+          </ul>
+        </li>
+        <li>
+          <p>
+            <strong>Nominal Typing</strong> : Compatibility between objects
+            determined based on their explicit type or name, rather than their
+            structure.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Duck typing</strong> : Compatibility of objects is
+            determined by whether they possess certain methods or properties,
+            rather than their specific type or class.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Structural typing</strong> : A concept where the
+            compatibility between objects is determined by their structure or
+            shape, rather than their explicit type or name.
+          </p>
+        </li>
+      </ul>
+      <h2 class="mume-header" id="5--vs--vs-typeof">5. == vs === vs typeof</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>==</th>
+            <th>===</th>
+            <th>typeof</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              Checks if the values being compared are equal, performing type
+              coercion if necessary.<br />Performs a loose comparison
+            </td>
+            <td>
+              Checks if the values being compared are equal and of the same
+              type, without performing any type coercion.<br />Performs a strict
+              comparison
+            </td>
+            <td>Determine the type of a value or expression</td>
+          </tr>
+          <tr>
+            <td>Returns boolean value</td>
+            <td>Returns boolean value</td>
+            <td>Returns a string representing the type of the operand.</td>
+          </tr>
+          <tr>
+            <td>Example :<br /><code>4 == &apos;4&apos; // true</code></td>
+            <td>Example :<br /><code>4 === &apos;4&apos; // false</code></td>
+            <td>
+              Example :<br /><code
+                >typeof &apos;hi&apos; // &apos;string&apos;</code
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="mume-header" id="6-scope">6. Scope</h2>
+
+      <ul>
+        <li>scope ~ availability</li>
+      </ul>
+      <table>
+        <thead>
+          <tr>
+            <th>Global scope</th>
+            <th>Function scope</th>
+            <th>Block scope</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Variables declared outside of any functions or blocks.</td>
+            <td>Variables declared within a function</td>
+            <td>Variables declared within block (defined by curly braces)</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>
+              accessed from anywhere within the code, including other functions
+              and blocks.
+            </td>
+            <td>
+              only accessible within that function and any nested functions
+              inside it
+            </td>
+            <td>only accessible within the block.</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="mume-header" id="7-expression-vs-statement">
+        7. Expression vs Statement
+      </h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Expression</th>
+            <th>Statements</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Expressions evaluates to a single value</td>
+            <td>Statements are the instructions to perform task</td>
+          </tr>
+          <tr>
+            <td>Example :<code>2+3*5</code> will evaluates to 17</td>
+            <td>Example :<code>if (true) console.log(&quot;hi&quot;)</code></td>
+          </tr>
+        </tbody>
+      </table>
+      <ul>
+        <li>
+          <strong>Function expression :</strong>
+          <ul>
+            <li>function as part of an expression</li>
+            <li>Example : <code>let sum = funciton(){...}</code></li>
+          </ul>
+        </li>
+      </ul>
+      <h2 class="mume-header" id="8-iife-modules-and-namespaces">
+        8. IIFE, Modules and Namespaces
+      </h2>
+
+      <ul>
+        <li>
+          <h3>IIFE (Immediately Invoked Function Expression)</h3>
+          <ul>
+            <li>
+              <p>It&apos;s a self-executing anonymous function.</p>
+            </li>
+            <li>
+              <p>
+                Variables &amp; functions inside the IIFE are have local scope.
+              </p>
+            </li>
+            <li>
+              <p>Prevents global scope pollution</p>
+            </li>
+            <li>
+              <p>Syntax :</p>
+              <pre
+                data-role="codeBlock"
+                data-info="js"
+                class="language-javascript"
+              ><span class="token punctuation">(</span><span class="token keyword keyword-function">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">//code</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre>
+            </li>
+            <li>
+              <p>Example :</p>
+              <pre
+                data-role="codeBlock"
+                data-info="js"
+                class="language-javascript"
+              ><span class="token punctuation">(</span><span class="token keyword keyword-function">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword keyword-let">let</span> value <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h3>Modules</h3>
+          <ul>
+            <li>
+              <p>Allows to organize code in separate files.</p>
+            </li>
+            <li>
+              <p>helps in writing reusable &amp; maintainable code.</p>
+            </li>
+            <li>
+              <p>a module may contain variable, function or classes</p>
+            </li>
+            <li>
+              <p><strong>Exporting Module</strong></p>
+              <ul>
+                <li>
+                  <p><code>export</code> keyword is used for named export</p>
+                </li>
+                <li>
+                  <p>
+                    <code>export default</code> keyword is used to default
+                    export
+                  </p>
+                </li>
+                <li>
+                  <p>Example :</p>
+                  <pre
+                    data-role="codeBlock"
+                    data-info="js"
+                    class="language-javascript"
+                  ><span class="token comment">//module.js</span>
+
+<span class="token keyword module keyword-export">export</span> <span class="token keyword module keyword-default">default</span> name <span class="token operator">=</span> <span class="token string">&quot;vikas&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword module keyword-export">export</span> <span class="token keyword keyword-function">function</span> <span class="token function">greet</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">&quot;Hi everyone&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <p><strong>Importing Module</strong></p>
+              <ul>
+                <li>
+                  <p><code>import</code> keyword can be used for importing</p>
+                </li>
+                <li>
+                  <p>Example :</p>
+                  <pre
+                    data-role="codeBlock"
+                    data-info="js"
+                    class="language-javascript"
+                  ><span class="token comment">//main.js</span>
+
+<span class="token keyword module keyword-import">import</span> <span class="token imports">guestName</span> <span class="token keyword module keyword-from">from</span> <span class="token string">&quot;/module.js&quot;</span><span class="token punctuation">;</span> <span class="token comment">//imports default export. i.e, name variable</span>
+
+<span class="token keyword module keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> greet <span class="token punctuation">}</span></span> <span class="token keyword module keyword-from">from</span> <span class="token string">&quot;/module.js&quot;</span><span class="token punctuation">;</span> <span class="token comment">//imports greet from module</span>
+
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>guestName <span class="token operator">+</span> <span class="token string">&quot;says &quot;</span> <span class="token operator">+</span> <span class="token function">greet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h3>Namespaces</h3>
+          <ul>
+            <li>
+              <p>
+                Containers uses to group &amp; organize the related variables,
+                functions and objects.
+              </p>
+            </li>
+            <li>
+              <p>Helps in avoiding naming conflicts.</p>
+            </li>
+            <li>
+              <p>
+                Namespaces are not built into js. but it can be achieved using
+                objects
+              </p>
+            </li>
+            <li>
+              <p>It can be accessed using the dot operator.</p>
+            </li>
+            <li>
+              <p>Example :</p>
+              <pre
+                data-role="codeBlock"
+                data-info="js"
+                class="language-javascript"
+              ><span class="token keyword keyword-var">var</span> marksNamespace <span class="token operator">=</span> <span class="token punctuation">{</span>
+  mark1<span class="token operator">:</span> <span class="token number">34</span><span class="token punctuation">,</span>
+  mark2<span class="token operator">:</span> <span class="token number">45</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">avg</span><span class="token operator">:</span> <span class="token keyword keyword-function">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword control-flow keyword-return">return</span> <span class="token punctuation">(</span><span class="token keyword keyword-this">this</span><span class="token punctuation">.</span><span class="token property-access">mark1</span> <span class="token operator">+</span> <span class="token keyword keyword-this">this</span><span class="token punctuation">.</span><span class="token property-access">mark2</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>marksNamespace<span class="token punctuation">.</span><span class="token property-access">mark1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//accessing the mark1 namespace</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>marksNamespace<span class="token punctuation">.</span><span class="token method function property-access">avg</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//accessing the avg namespace, which calls the associated function</span>
+</pre>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h2 class="mume-header" id="9-message-queue-and-event-loop">
+        9. Message Queue and Event Loop
+      </h2>
+
+      <ul>
+        <li>
+          When asynchronous operations such as netwwork request or timer is
+          encountered, it&apos;s associated callback is placed in the queue in a
+          fifo fashion,
+        </li>
+        <li>
+          After the execution of synchronous code, the event loop process the
+          queue.
+        </li>
+        <li>
+          Event loop looks for pending task in queue, if yes then puts that task
+          inside the stack.
+        </li>
+        <li>
+          Asynchronous operations may include <code>eventlisteners</code> ,
+          <code>setTimeout</code> or any api request etc
+        </li>
+      </ul>
+      <h2
+        class="mume-header"
+        id="10-settimeout-setinterval-and-requestanimationframe"
+      >
+        10. setTimeout, setInterval and requestAnimationFrame
+      </h2>
+
+      <ul>
+        <li>
+          <h3>setTimeout vs setInterval</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>setTimeout</th>
+                <th>setInterval</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  Executes a specified piece of code or a function once after a
+                  given delay.
+                </td>
+                <td>
+                  Executes a specified piece of code or a function repeatedly at
+                  a given interval.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Syntax :<code
+                    >setTimeout(callback_fn, delay, ...parameters)</code
+                  >
+                </td>
+                <td>
+                  Syntax :<code
+                    >setInterval(callback_fn, delay, ...parameters)</code
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Example :<code
+                    >setTimeout(function(){console.log(&quot;hello&quot;);},1000)</code
+                  >
+                  will print <code>hello</code> once after 1 second of
+                  program&#xA0;execution
+                </td>
+                <td>
+                  Example :<code
+                    >setInterval(function(){console.log(&quot;hello&quot;);},1000)</code
+                  >
+                  will print <code>hello</code> every 1 second
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Execution can be terminated with <code>clearTimeout()</code>
+                </td>
+                <td>
+                  Execution can be terminated with <code>clearInterval()</code>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li>
+          <h3>requestAnimationFrame</h3>
+          <ul>
+            <li>
+              used to schedule a function to execute before updating visual
+              elements in the webpage (called repainting)
+            </li>
+            <li>Syntax : <code>requestAnimationFrame(callback_fn)</code></li>
+          </ul>
+        </li>
+      </ul>
+      <h2 class="mume-header" id="11-javascript-engines">
+        11. JavaScript Engines
+      </h2>
+
+      <ul>
+        <li>
+          <p>for running Js, we need a Js runtime environment.</p>
+        </li>
+        <li>
+          <p>
+            Js runtime environment consist of JS Engine, API, event loop,
+            queues....
+          </p>
+        </li>
+        <li>
+          <p>
+            v8 engine (written in c++) is most famously used js engine, in
+            chrome &amp; node js
+          </p>
+        </li>
+        <li>
+          <p>3 process happens inside the js engine</p>
+          <ul>
+            <li>PARSING : code -&gt; token -&gt; abstract syntax tree,</li>
+            <li>COMPILATION (JIT) : AST-&gt; byte code &amp; optimize</li>
+            <li>
+              EXECUTION : uses memory heap &amp; call stack in the process
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>Mark &amp; sweep algorithm is used for garbage collection</p>
+        </li>
+      </ul>
+      <h2 class="mume-header" id="12-bitwise-operators">
+        12. Bitwise Operators
+      </h2>
+
+      <ul>
+        <li>performs operations on bits (0&apos;s and 1&apos;s)</li>
+        <li>
+          <strong>NOT <code>~</code></strong> :
+          <ul>
+            <li>works on single bit, replaces 0 with 1 and 1 with 0</li>
+            <li>
+              Example : <code>~5</code> -&gt; <code>~ (101)</code>-&gt;<code
+                >010</code
+              >
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>OR <code>|</code></strong> :
+          <ul>
+            <li>either of the bit is 1 =&gt; result 1</li>
+            <li>
+              Example : <code>5 | 6</code> -&gt; <code>101 | 110</code> -&gt;
+              <code>111</code> -&gt; <code>7</code>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>AND <code>&amp;</code></strong> :
+          <ul>
+            <li>both bits are <code>1</code> =&gt;result 1</li>
+            <li>
+              Example : <code>7 &amp; 6</code>-&gt;<code>111 &amp; 110</code
+              >-&gt;<code>110</code>-&gt;<code>6</code>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>XOR <code>^</code></strong> :
+          <ul>
+            <li>
+              one bit is <code>1</code> &amp; other bit is <code>0</code> -&gt;
+              result <code>1</code>
+            </li>
+            <li>
+              Exmple : <code>5 ^ 6</code> -&gt; <code>101 ^ 110</code> -&gt;
+              <code>011</code> -&gt;<code>3</code>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Leftshift <code>&lt;&lt;</code></strong> :
+          <ul>
+            <li>
+              shifts the number to left by specified number, works on single bit
+            </li>
+            <li>
+              Example : <code>5&lt;&lt;2</code> -&gt;
+              <code>0000 0101</code> -&gt; <code>0001 0100</code> -&gt;20
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Rightshift <code>&gt;&gt;</code></strong> :
+          <ul>
+            <li>
+              shifts the number to left by specified number, works on single bit
+            </li>
+            <li>
+              Example <code>20&gt;&gt;2</code> -&gt; <code>001 0100</code> -&gt;
+              <code>0000 0101</code> -&gt;5
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h2 class="mume-header" id="13-dom">13. DOM</h2>
+
+      <ul>
+        <li>
+          <p>
+            Document Object Model is a tree like representation of html document
+          </p>
+        </li>
+        <li>
+          <p>Each element is a node. HTML element is the root of the DOM</p>
+        </li>
+        <li>
+          <p>
+            <code>console.dir(document)</code> will print all the element &amp;
+            their properties
+          </p>
+        </li>
+        <li>
+          <h3>Selectors</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Selector</th>
+                <th>CSS</th>
+                <th>Js</th>
+                <th>JQuery</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Id</td>
+                <td><code>#id</code></td>
+                <td>
+                  <code>document.getElementById(&apos;id&apos;)</code
+                  >&#xA0;<br /><code
+                    >document.querySelector(&apos;#id&apos;)</code
+                  >
+                </td>
+                <td><code>$(&apos;#id&apos;)</code></td>
+              </tr>
+              <tr>
+                <td>Class name</td>
+                <td><code>.className</code></td>
+                <td>
+                  <code
+                    >document.getElementsByClassName(&apos;className&apos;)</code
+                  >&#xA0;<br /><code
+                    >document.querySelectorAll(&apos;className&apos;)</code
+                  >
+                </td>
+                <td><code>$(&apos;.className&apos;)</code></td>
+              </tr>
+              <tr>
+                <td>Tag name</td>
+                <td><code>tagName</code></td>
+                <td>
+                  <code>document.getElementsByTagName(tagName)</code><br /><code
+                    >document.querySelectorAll(tagName)</code
+                  >
+                </td>
+                <td><code>$(&apos;tagName&apos;)</code></td>
+              </tr>
+            </tbody>
+          </table>
+          <ul>
+            <li><code>querySelector()</code> returns the first element</li>
+            <li>
+              <code>querySelectorAll()</code> returns NodeList of elements
+            </li>
+            <li>
+              pseudo classes like <code>:nth-child()</code> ,
+              <code>::before</code> , <code>::placeholder</code> can also be
+              used with selectors for selecting the html elements
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h3>Node methods</h3>
+          <p>
+            <code>parentNode()</code> , <code>parentElement()</code> ,
+            <code>childNodes()</code> , <code>children()</code> ,
+            <code>firstChild()</code> , <code>firstElementChild()</code> ,
+            <code>lastChild()</code> , <code>lastElementChild()</code> ,
+            <code>nextSibling()</code> , <code>nextElementSibling()</code> ,
+            <code>previousSibling()</code> ,
+            <code>previousElementSibling()</code>
+          </p>
+          <ul>
+            <li>
+              methods that have the keyword <code>Element</code> returns only
+              Element nodes,
+            </li>
+            <li>
+              methods without keyword <code>Element</code> returns all kind of
+              nodes i.e Element node, text node, comment node etc.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>Create Element : <code>createElement(tagName)</code></p>
+        </li>
+        <li>
+          <p>
+            Create text node : <code>createTextNode(&apos;text&apos;)</code>
+          </p>
+        </li>
+        <li>
+          <p>
+            Add element to the document : <code>appendChild()</code> ,
+            <code>prependChild()</code>
+          </p>
+        </li>
+      </ul>
+      <h2 class="mume-header" id="14-factory-functions">
+        14. Factory functions
+      </h2>
+
+      <ul>
+        <li>
+          <p>
+            Functions that create &amp; return object, Always use camel case
+          </p>
+        </li>
+        <li>
+          <p>Syntax :</p>
+          <pre
+            data-role="codeBlock"
+            data-info="js"
+            class="language-javascript"
+          ><span class="token keyword keyword-function">function</span> <span class="token function">fnName</span><span class="token punctuation">(</span> <span class="token parameter"><span class="token operator">&lt;</span>params<span class="token operator">&gt;</span></span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword control-flow keyword-return">return</span> <span class="token punctuation">{</span> obj <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre>
+        </li>
+        <li>
+          <p>Example</p>
+          <pre
+            data-role="codeBlock"
+            data-info="js"
+            class="language-javascript"
+          ><span class="token keyword keyword-function">function</span> <span class="token function">createCircle</span><span class="token punctuation">(</span><span class="token parameter">radius</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword control-flow keyword-return">return</span> <span class="token punctuation">{</span>
+    radius<span class="token operator">:</span> radius<span class="token punctuation">,</span>
+    <span class="token function-variable function">circumference</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword control-flow keyword-return">return</span> <span class="token number">2</span> <span class="token operator">*</span> <span class="token number">3.14</span> <span class="token operator">*</span> radius<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword keyword-const">const</span> circle1 <span class="token operator">=</span> <span class="token function">createCircle</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// creates a circle object</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>circle1<span class="token punctuation">.</span><span class="token method function property-access">circumference</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//12.56</span>
+</pre>
+        </li>
+      </ul>
+      <h2 class="mume-header" id="14-this-call-apply-bind">
+        14. this(), call(), apply(), bind()
+      </h2>
+
+      <h3 class="mume-header" id="this">this</h3>
+
+      <ul>
+        <li>
+          <p>references an object in the current execution context</p>
+        </li>
+        <li>
+          <p>current execution context refers to,</p>
+          <ul>
+            <li>
+              <p>global environment of the browser or nodejs</p>
+              <pre
+                data-role="codeBlock"
+                data-info="js"
+                class="language-javascript"
+              ><span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token keyword keyword-this">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//prints the global object</span>
+</pre>
+            </li>
+            <li>
+              <p>
+                when used inside a function, the object thats calling the
+                function
+              </p>
+              <pre
+                data-role="codeBlock"
+                data-info="js"
+                class="language-javascript"
+              ><span class="token keyword keyword-function">function</span> <span class="token function">getObj</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token keyword keyword-this">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword keyword-const">const</span> user <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">&quot;thewecas&quot;</span><span class="token punctuation">,</span>
+  getObj<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+user<span class="token punctuation">.</span><span class="token method function property-access">getObj</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// prints user object</span>
+</pre>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h3 class="mume-header" id="bind">bind</h3>
+
+      <ul>
+        <li>
+          <p>used to explicitly set the reference of <code>this</code></p>
+          <pre
+            data-role="codeBlock"
+            data-info="js"
+            class="language-javascript"
+          ><span class="token keyword keyword-function">function</span> <span class="token function">getObj</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token keyword keyword-this">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword keyword-const">const</span> user <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">&quot;thewecas&quot;</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-const">const</span> myUser <span class="token operator">=</span> getObj<span class="token punctuation">.</span><span class="token method function property-access">bind</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">myUser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//prints {name : &quot;thewecas&quot; }</span>
+</pre>
+        </li>
+      </ul>
+      <h3 class="mume-header" id="call">call</h3>
+
+      <ul>
+        <li>
+          <p>call a function with different <code>this</code> context/value</p>
+        </li>
+        <li>
+          <p>can pass additional arguments separated by comma</p>
+        </li>
+        <li>
+          <p><code>fn.call( obj, param1, param2...)</code></p>
+          <pre
+            data-role="codeBlock"
+            data-info="js"
+            class="language-javascript"
+          ><span class="token keyword keyword-function">function</span> <span class="token function">getObj</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token keyword keyword-this">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword keyword-const">const</span> user <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">&quot;thewecas&quot;</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+getObj<span class="token punctuation">.</span><span class="token method function property-access">call</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//prints {name : &quot;thewecas&quot; }</span>
+</pre>
+        </li>
+      </ul>
+      <h3 class="mume-header" id="apply">apply</h3>
+
+      <ul>
+        <li>
+          <p>similar to call ,but the second argument should be an array</p>
+        </li>
+        <li>
+          <p><code>fn.apply( obj, [param1, param2 .... ] )</code></p>
+          <pre
+            data-role="codeBlock"
+            data-info="js"
+            class="language-javascript"
+          ><span class="token keyword keyword-function">function</span> <span class="token function">getObj</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token keyword keyword-this">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword keyword-const">const</span> user <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">&quot;thewecas&quot;</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+getObj<span class="token punctuation">.</span><span class="token method function property-access">apply</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//prints {name : &quot;thewecas&quot; }</span>
+</pre>
+        </li>
+      </ul>
+      <blockquote>
+        <p>
+          <code>arguments</code> is a collection of arguments that are being
+          passed to the function
+        </p>
+        <pre
+          data-role="codeBlock"
+          data-info="js"
+          class="language-javascript"
+        ><span class="token keyword keyword-function">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">fn</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// prints [1,2,3]</span>
+</pre>
+      </blockquote>
+      <h2 class="mume-header" id="16-new-constructor-instanceof-and-instances">
+        16. new, constructor, instanceof and Instances
+      </h2>
+
+      <ul>
+        <li>
+          <p>
+            <strong>constructor</strong> is used for creating &amp; initializing
+            the object
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>new</strong> keyword is used to invoke the constructor &amp;
+            create instance of a class
+          </p>
+          <pre
+            data-role="codeBlock"
+            data-info="js"
+            class="language-javascript"
+          ><span class="token keyword keyword-class">class</span> <span class="token class-name">Circle</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">radius</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-this">this</span><span class="token punctuation">.</span><span class="token property-access">radius</span> <span class="token operator">=</span> radius<span class="token punctuation">;</span>
+    <span class="token keyword keyword-this">this</span><span class="token punctuation">.</span><span class="token method-variable function-variable method function property-access">draw</span> <span class="token operator">=</span> <span class="token keyword keyword-function">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">&quot;Draw&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword keyword-const">const</span> myCircle <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Circle</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre>
+        </li>
+        <li>
+          <p>use Pascal notation for naming constructor functions</p>
+          <pre
+            data-role="codeBlock"
+            data-info="js"
+            class="language-javascript"
+          ><span class="token keyword keyword-function">function</span> <span class="token function"><span class="token maybe-class-name">Circle</span></span><span class="token punctuation">(</span><span class="token parameter">radius</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword keyword-this">this</span><span class="token punctuation">.</span><span class="token property-access">radius</span> <span class="token operator">=</span> radius<span class="token punctuation">;</span>
+  <span class="token keyword keyword-this">this</span><span class="token punctuation">.</span><span class="token method-variable function-variable method function property-access">draw</span> <span class="token operator">=</span> <span class="token keyword keyword-function">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">&quot;Draw&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword keyword-const">const</span> myCircle <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Circle</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre>
+        </li>
+        <li>
+          <p>
+            <strong>instance</strong> is a unique object created from a class or
+            constructor function
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>instanceof</strong> keyword is used to check whether the
+            object is an instance of a class or a constructor function
+          </p>
+          <pre
+            data-role="codeBlock"
+            data-info="js"
+            class="language-javascript"
+          ><span class="token keyword keyword-const">const</span> name <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">&quot;thewecas&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>name <span class="token keyword keyword-instanceof">instanceof</span> <span class="token class-name">String</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+</pre>
+        </li>
+      </ul>
+      <h2 class="mume-header" id="17-prototype-inheritance-and-prototype-chain">
+        17. Prototype Inheritance and Prototype Chain
+      </h2>
+
+      <ul>
+        <li>
+          <p>A prototype is a template for the object</p>
+        </li>
+        <li>
+          <p>prototype property belongs to constructor functions or classes</p>
+        </li>
+        <li>
+          <p>
+            <code>Object.create()</code> is used to create an object from a
+            prototype.
+          </p>
+          <ul>
+            <li>Example</li>
+          </ul>
+          <pre
+            data-role="codeBlock"
+            data-info="js"
+            class="language-javascript"
+          ><span class="token keyword keyword-const">const</span> food <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Prototype</span>
+  <span class="token function-variable function">init</span><span class="token operator">:</span> <span class="token keyword keyword-function">function</span> <span class="token punctuation">(</span><span class="token parameter">type</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-this">this</span><span class="token punctuation">.</span><span class="token property-access">type</span> <span class="token operator">=</span> type<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">eat</span><span class="token operator">:</span> <span class="token keyword keyword-function">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">&quot;you ate the &quot;</span> <span class="token operator">+</span> <span class="token keyword keyword-this">this</span><span class="token punctuation">.</span><span class="token property-access">type</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">//creating the bread object  from the food prototype</span>
+<span class="token keyword keyword-const">const</span> bread <span class="token operator">=</span> <span class="token known-class-name class-name">Object</span><span class="token punctuation">.</span><span class="token method function property-access">create</span><span class="token punctuation">(</span>food<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
