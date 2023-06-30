@@ -511,24 +511,125 @@
 ## 17. Prototype Inheritance and Prototype Chain
 
 - A prototype is a template for the object
-- prototype property belongs to constructor functions or classes
-- `Object.create()` is used to create an object from a prototype.
+- Every object has the property `prototype`
+- Every instance of the object has the property `__proto__`
+- instance can inherit any property or method from the prototype.
+- each object has a private property that holds a link to another object called its prototype & so on untill an object reached with null as its prototype. these makes up the prototype chain
+- `Object.create()` is used to create instance of an object from a prototype.
 
   - Example
 
   ```js
-  const food = {
-    // Prototype
-    init: function (type) {
-      this.type = type;
-    },
-    eat: function () {
-      console.log("you ate the " + this.type);
+  // Create a prototype object
+  var personPrototype = {
+    greet: function () {
+      console.log("Hi everyone");
     },
   };
 
-  //creating the bread object  from the food prototype
-  const bread = Object.create(food);
+  //create object from the prototype
+  var john = Object.create(personPrototype);
+
+  john.greet(); // Output : Hi everyone
+  john.name = "John";
+  john.age = 24;
   ```
 
-### Prototype Inheritance
+- we can also add method to the prototype
+
+  ```js
+  // Add a new function to the prototype
+  personPrototype.introduce = function () {
+    console.log("I am " + this.name + ", and I am " + this.age + " years old.");
+  };
+
+  // Access the introduce method added to the prototype
+  john.introduce(); // Output: I am john, and I am 24 years old.
+  ```
+
+## 18. Object.create and Object.assign
+
+- `Object.create()` used to creates a new object, using an existing object as the prototype of the newly created object.
+
+  ```js
+  var mile = Object.Create(personPrototype);
+
+  mile.greet(); // Output : Hi everyone
+  ```
+
+- `Object.assign()` copies the properties from one or more source objects to a target object.
+
+  ```js
+  var jane = { age: 24 };
+  Object.assign(jane, personPrototype);
+
+  jane.greet(); // Output : Hi everyone
+  ```
+
+## 19. map, reduce, filter, forEach
+
+### map
+
+- Syntax : `arrayName.map(callbackFn())`
+- calls the `callbackFn()` for each element of the array, & creates the new array with each element being the result of callback function
+
+  ```js
+  const array = [1, 2, 3];
+
+  const squareArray = array.map((item) => item * 2);
+
+  console.log(array); // Output : [ 1, 2, 3 ]
+  console.log(squareArray); // Output: [ 2, 4, 6 ]
+  ```
+
+### reduce
+
+- Syntax : `arrayName.reduce(callbackFn(), initalVal)`
+- Accumulates array elements into single value by performing the reducer `callbackFn()`,
+- return value from the `callbackFn()` from one iteration is passed to next iteration.
+
+  ```js
+  const array = [1, 2, 3, 4];
+
+  const initialVal = 0;
+  const sum = array.reduce(
+    (accumulator, currentVal) => accumulator + currentVal,
+    initialVal
+  );
+
+  console.log(sum); // Output: 10
+  ```
+
+### filter
+
+- Syntax : `arrayName.filter(callbackfn())`
+- The `callbackFn()` should return a truthy value (i.e, `true` or `false`)
+- Creates a new array with elements for which the `callbackFn()` returns true
+
+  ```js
+  const array = [1, 2, 3, 4];
+
+  const evenNoArray = array.filter((item) => item % 2 == 0);
+
+  console.log(array); // Output: [1, 2, 3, 4];
+  console.log(evenNoArray); // Output: [ 2, 4 ]
+  ```
+
+### forEach
+
+- Syntax : `arrayName.forEach(callbackFn())`
+- performs the `callbackFn()` once for each array element
+
+  ```js
+  const array = [1, 2, 3, 4];
+
+  const evenNoArray = array.filter((item) => console.log(item));
+
+  // Output : 1  2  3  4
+  ```
+
+## 20. Pure Functions, Side Effects, State Mutation and Event Propagation
+
+### Pure Functions
+
+- function that is deterministic and has no side effects.
