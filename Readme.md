@@ -514,8 +514,9 @@
 - Every object has the property `prototype`
 - Every instance of the object has the property `__proto__`
 - instance can inherit any property or method from the prototype.
-- each object has a private property that holds a link to another object called its prototype & so on untill an object reached with null as its prototype. these makes up the prototype chain
+- each object has a private property that holds a link to another object called its prototype & so on until an object reached with null as its prototype. these makes up the prototype chain
 - `Object.create()` is used to create instance of an object from a prototype.
+  2
 
   - Example
 
@@ -630,6 +631,207 @@
 
 ## 20. Pure Functions, Side Effects, State Mutation and Event Propagation
 
+### Deterministic Function
+
+- for any given input, the output will be same.
+
+  ```js
+  //deterministic function
+  const square = (num) => num * 2;
+
+  //non-deterministic function
+  const getRandom = (num) => Math.floor(Math.random() * 10 + 1) * num;
+  ```
+
+### Side effect
+
+- when functions alter the variables outside its scope
+
+  ```js
+  const animalArr = ["zebra", "dog", "cat"];
+
+  const addAnimal = (araay, animal) => {
+    array.push(animal);
+  };
+
+  addAnimal(array, "elephant");
+  ```
+
 ### Pure Functions
 
 - function that is deterministic and has no side effects.
+
+### State Mutation
+
+- Direct modification of a state or data structure.
+- changing value or properties of an object or vaiable without creating a new object or variable.
+- to avoid mutation we can use spread operator & create new object
+
+### Event Propagation
+
+- when an event ocuurs on an element, it can trigger event handlers not only on that element but also ont its parent elements or ancestors
+- 2 phases
+  - **Capture phase** : event is captured by outermost element and then propagated downwards to the target element
+  - **Bubbling phase** :after target phase,the event starts bubbling up from target element to its ancestor element.
+- **Target phase** starts once the event reaches the target element.
+- we can stop propagation by using `event.stopPropagation()` method wihtin an event handler.
+- Default behaviour of event propagation is Bubbling phase.
+- We can change this behavior explicitly to capture phase by setting the `useCapture` parameter to `true`.
+  `element.addEventListener(eventType, handler, true)`
+
+## 21. Closures
+
+- Functions can access the values outside their scope.
+- Functions combined with lexical scope forms the closure.
+
+```js
+function x() {
+  const a = 10;
+  return function () {
+    console.log(a);
+  };
+}
+const z = x();
+z(); // Output : 10
+```
+
+## 22. High Order Functions
+
+- Takes function as a parameter or returns a function.
+  Example:
+
+```js
+//takes function as a paramter
+array.map(() => {...});
+//or
+setTimeout(() = {...});
+//returs a function
+function x() {
+  return function () {
+    console.log("hello");
+  };
+}
+```
+
+## 23. Recursion
+
+- function calls itself.
+
+```js
+const countDown = (num) => {
+  if (num == 0) return;
+
+  console.log(num);
+
+  countDown(num - 1);
+};
+
+countDown(5);
+
+// Output : 5 4 3 2 1
+```
+
+## 24. Collections and Generators
+
+### Collections
+
+- Data strcuturs to store and organize values
+- **Array** :
+
+  - ordered, indexed ,duplicates.
+  - represented using sqaure brackets.
+  - few inbuilt methods are : `push`, `pop`, `shift`, `unshift`, `splice` ...
+
+  ```js
+  const numbers = [1, 2, 3, 4, 5];
+  console.log(numbers[0]); // Output: 1
+  console.log(numbers.length); // Output: 5
+  numbers.push(6); // Add 6 to the end
+  console.log(numbers); // Output: [1, 2, 3, 4, 5, 6]
+  ```
+
+- **Sets**:
+
+  - ordered, no duplicates
+  - few inbuilt methods are : `add`, `delete`, `has`, `clear`...
+
+  ```js
+  const set = new Set();
+  set.add(1);
+  set.add(2);
+  set.add(3);
+  console.log(set.size); // Output: 3
+  console.log(set.has(2)); // Output: true
+  set.delete(3);
+  console.log(set); // Output: Set {1, 2}
+  ```
+
+- **Maps**:
+
+  - key-value pairs where each value can be accessed using its corresponding key.
+  - random access
+  - few inbuilt methods are : `set`, `get`, `has`, `delete`...
+
+  ```js
+  const map = new Map();
+  map.set("name", "John");
+  map.set("age", 30);
+  console.log(map.get("name")); // Output: John
+  console.log(map.has("age")); // Output: true
+  map.delete("age");
+  console.log(map); // Output: Map(1) { 'name' => 'John' }
+  ```
+
+- **Stack, Queue, Deque**:
+  - ordered, One way reading, one way adding
+  - allowed operations are : add, remove, peek
+  - Stack : lifo
+  - Queue : fifo
+  - Deque : combo of stack and queue, double ended queue
+
+### Generators
+
+- functions that can be paused and resumed during execution
+- `*` is postfixed to `function` keyword
+- `yield` is used to pause execution and return a value;
+- `next()` used to start/continue executing the code
+- `return()` used to exit the execution
+- `throw()` to throw new error
+
+```js
+function* simpleGenerator() {
+  console.log("before yield 1");
+  yield 1;
+  console.log("before yield 2");
+  yield 2;
+  console.log("after yield 2");
+}
+
+const obj = simpleGenerator();
+console.log(obj.next()); // Output : before yield 1 \n {value: 1, done: false}
+console.log(obj.next()); // Output : before yield 2 \n {value: 2, done: false}
+console.log(obj.next()); // Output : after yield 2 \n {value: undefined, done: true}
+```
+
+## 25. Promises
+
+-
+
+````js
+let prom = new Promise((resolve, reject) => {
+  let flag = true;
+  if (flag) {
+    resolve("success");
+  } else {
+    reject("Failed");
+  }
+});
+
+prom
+  .then((message) => {
+    console.log("✔️", message);
+  })
+  .catch((message) => {
+    console.log("❌", message);
+  });```
+````

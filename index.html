@@ -1016,10 +1016,11 @@ getObj<span class="token punctuation">.</span><span class="token method function
 <p>instance can inherit any property or method from the prototype.</p>
 </li>
 <li>
-<p>each object has a private property that holds a link to another object called its prototype &amp; so on untill an object reached with null as its prototype. these makes up the prototype chain</p>
+<p>each object has a private property that holds a link to another object called its prototype &amp; so on until an object reached with null as its prototype. these makes up the prototype chain</p>
 </li>
 <li>
-<p><code>Object.create()</code> is used to create instance of an object from a prototype.</p>
+<p><code>Object.create()</code> is used to create instance of an object from a prototype.<br>
+2</p>
 <ul>
 <li>Example</li>
 </ul>
@@ -1141,12 +1142,212 @@ jane<span class="token punctuation">.</span><span class="token method function p
 </ul>
 <h2 class="mume-header" id="20-pure-functions-side-effects-state-mutation-and-event-propagation">20. Pure Functions, Side Effects, State Mutation and Event Propagation</h2>
 
+<h3 class="mume-header" id="deterministic-function">Deterministic Function</h3>
+
+<ul>
+<li>
+<p>for any given input, the output will be same.</p>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token comment">//deterministic function</span>
+<span class="token keyword keyword-const">const</span> <span class="token function-variable function">square</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">num</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> num <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">;</span>
+
+<span class="token comment">//non-deterministic function</span>
+<span class="token keyword keyword-const">const</span> <span class="token function-variable function">getRandom</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">num</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token known-class-name class-name">Math</span><span class="token punctuation">.</span><span class="token method function property-access">floor</span><span class="token punctuation">(</span><span class="token known-class-name class-name">Math</span><span class="token punctuation">.</span><span class="token method function property-access">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> num<span class="token punctuation">;</span>
+</pre></li>
+</ul>
+<h3 class="mume-header" id="side-effect">Side effect</h3>
+
+<ul>
+<li>
+<p>when functions alter the variables outside its scope</p>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword keyword-const">const</span> animalArr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;zebra&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;dog&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;cat&quot;</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-const">const</span> <span class="token function-variable function">addAnimal</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">araay<span class="token punctuation">,</span> animal</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+  array<span class="token punctuation">.</span><span class="token method function property-access">push</span><span class="token punctuation">(</span>animal<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token function">addAnimal</span><span class="token punctuation">(</span>array<span class="token punctuation">,</span> <span class="token string">&quot;elephant&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre></li>
+</ul>
 <h3 class="mume-header" id="pure-functions">Pure Functions</h3>
 
 <ul>
 <li>function that is deterministic and has no side effects.</li>
 </ul>
+<h3 class="mume-header" id="state-mutation">State Mutation</h3>
 
+<ul>
+<li>Direct modification of a state or data structure.</li>
+<li>changing value or properties of an object or vaiable without creating a new object or variable.</li>
+<li>to avoid mutation we can use spread operator &amp; create new object</li>
+</ul>
+<h3 class="mume-header" id="event-propagation">Event Propagation</h3>
+
+<ul>
+<li>when an event ocuurs on an element, it can trigger event handlers not only on that element but also ont its parent elements or ancestors</li>
+<li>2 phases
+<ul>
+<li><strong>Capture phase</strong> : event is captured by outermost element and then propagated downwards to the target element</li>
+<li><strong>Bubbling phase</strong> :after target phase,the event starts bubbling up from target element to its ancestor element.</li>
+</ul>
+</li>
+<li><strong>Target phase</strong> starts once the event reaches the target element.</li>
+<li>we can stop propagation by using <code>event.stopPropagation()</code> method wihtin an event handler.</li>
+<li>Default behaviour of event propagation is Bubbling phase.</li>
+<li>We can change this behavior explicitly to capture phase by setting the <code>useCapture</code> parameter to <code>true</code>.<br>
+<code>element.addEventListener(eventType, handler, true)</code></li>
+</ul>
+<h2 class="mume-header" id="21-closures">21. Closures</h2>
+
+<ul>
+<li>Functions can access the values outside their scope.</li>
+<li>Functions combined with lexical scope forms the closure.</li>
+</ul>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword keyword-function">function</span> <span class="token function">x</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword keyword-const">const</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+  <span class="token keyword control-flow keyword-return">return</span> <span class="token keyword keyword-function">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword keyword-const">const</span> z <span class="token operator">=</span> <span class="token function">x</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">z</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output : 10</span>
+</pre><h2 class="mume-header" id="22-high-order-functions">22. High Order Functions</h2>
+
+<ul>
+<li>Takes function as a parameter or returns a function.<br>
+Example:</li>
+</ul>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token comment">//takes function as a paramter</span>
+array<span class="token punctuation">.</span><span class="token method function property-access">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span><span class="token spread operator">...</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//or</span>
+<span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token spread operator">...</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//returs a function</span>
+<span class="token keyword keyword-function">function</span> <span class="token function">x</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword control-flow keyword-return">return</span> <span class="token keyword keyword-function">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">&quot;hello&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre><h2 class="mume-header" id="23-recursion">23. Recursion</h2>
+
+<ul>
+<li>function calls itself.</li>
+</ul>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword keyword-const">const</span> <span class="token function-variable function">countDown</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">num</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword control-flow keyword-if">if</span> <span class="token punctuation">(</span>num <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword control-flow keyword-return">return</span><span class="token punctuation">;</span>
+
+  <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token function">countDown</span><span class="token punctuation">(</span>num <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token function">countDown</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Output : 5 4 3 2 1</span>
+</pre><h2 class="mume-header" id="24-collections-and-generators">24. Collections and Generators</h2>
+
+<h3 class="mume-header" id="collections">Collections</h3>
+
+<ul>
+<li>
+<p>Data strcuturs to store and organize values</p>
+</li>
+<li>
+<p><strong>Array</strong> :</p>
+<ul>
+<li>ordered, indexed ,duplicates.</li>
+<li>represented using sqaure brackets.</li>
+<li>few inbuilt methods are : <code>push</code>, <code>pop</code>, <code>shift</code>, <code>unshift</code>, <code>splice</code> ...</li>
+</ul>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword keyword-const">const</span> numbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>numbers<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: 1</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>numbers<span class="token punctuation">.</span><span class="token property-access">length</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: 5</span>
+numbers<span class="token punctuation">.</span><span class="token method function property-access">push</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Add 6 to the end</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>numbers<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: [1, 2, 3, 4, 5, 6]</span>
+</pre></li>
+<li>
+<p><strong>Sets</strong>:</p>
+<ul>
+<li>ordered, no duplicates</li>
+<li>few inbuilt methods are : <code>add</code>, <code>delete</code>, <code>has</code>, <code>clear</code>...</li>
+</ul>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword keyword-const">const</span> set <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+set<span class="token punctuation">.</span><span class="token method function property-access">add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+set<span class="token punctuation">.</span><span class="token method function property-access">add</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+set<span class="token punctuation">.</span><span class="token method function property-access">add</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>set<span class="token punctuation">.</span><span class="token property-access">size</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: 3</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>set<span class="token punctuation">.</span><span class="token method function property-access">has</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: true</span>
+set<span class="token punctuation">.</span><span class="token method function property-access">delete</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>set<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: Set {1, 2}</span>
+</pre></li>
+<li>
+<p><strong>Maps</strong>:</p>
+<ul>
+<li>key-value pairs where each value can be accessed using its corresponding key.</li>
+<li>random access</li>
+<li>few inbuilt methods are : <code>set</code>, <code>get</code>, <code>has</code>, <code>delete</code>...</li>
+</ul>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword keyword-const">const</span> map <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+map<span class="token punctuation">.</span><span class="token method function property-access">set</span><span class="token punctuation">(</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;John&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+map<span class="token punctuation">.</span><span class="token method function property-access">set</span><span class="token punctuation">(</span><span class="token string">&quot;age&quot;</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>map<span class="token punctuation">.</span><span class="token method function property-access">get</span><span class="token punctuation">(</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: John</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>map<span class="token punctuation">.</span><span class="token method function property-access">has</span><span class="token punctuation">(</span><span class="token string">&quot;age&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: true</span>
+map<span class="token punctuation">.</span><span class="token method function property-access">delete</span><span class="token punctuation">(</span><span class="token string">&quot;age&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>map<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: Map(1) { &apos;name&apos; =&gt; &apos;John&apos; }</span>
+</pre></li>
+<li>
+<p><strong>Stack, Queue, Deque</strong>:</p>
+<ul>
+<li>ordered, One way reading, one way adding</li>
+<li>allowed operations are : add, remove, peek</li>
+<li>Stack : lifo</li>
+<li>Queue : fifo</li>
+<li>Deque : combo of stack and queue, double ended queue</li>
+</ul>
+</li>
+</ul>
+<h3 class="mume-header" id="generators">Generators</h3>
+
+<ul>
+<li>functions that can be paused and resumed during execution</li>
+<li><code>*</code> is postfixed to <code>function</code> keyword</li>
+<li><code>yield</code> is used to pause execution and return a value;</li>
+<li><code>next()</code> used to start/continue executing the code</li>
+<li><code>return()</code> used to exit the execution</li>
+<li><code>throw()</code> to throw new error</li>
+</ul>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword keyword-function">function</span><span class="token operator">*</span> <span class="token function">simpleGenerator</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">&quot;before yield 1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword control-flow keyword-yield">yield</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">&quot;before yield 2&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword control-flow keyword-yield">yield</span> <span class="token number">2</span><span class="token punctuation">;</span>
+  <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">&quot;after yield 2&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword keyword-const">const</span> obj <span class="token operator">=</span> <span class="token function">simpleGenerator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span><span class="token method function property-access">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output : before yield 1 \n {value: 1, done: false}</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span><span class="token method function property-access">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output : before yield 2 \n {value: 2, done: false}</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span><span class="token method function property-access">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output : after yield 2 \n {value: undefined, done: true}</span>
+</pre><h2 class="mume-header" id="25-promises">25. Promises</h2>
+
+<ul>
+<li></li>
+</ul>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword keyword-let">let</span> prom <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword keyword-let">let</span> flag <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+  <span class="token keyword control-flow keyword-if">if</span> <span class="token punctuation">(</span>flag<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">&quot;success&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword control-flow keyword-else">else</span> <span class="token punctuation">{</span>
+    <span class="token function">reject</span><span class="token punctuation">(</span><span class="token string">&quot;Failed&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+prom
+  <span class="token punctuation">.</span><span class="token method function property-access">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">message</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">&quot;&#x2714;&#xFE0F;&quot;</span><span class="token punctuation">,</span> message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token keyword control-flow keyword-catch">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">message</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">&quot;&#x274C;&quot;</span><span class="token punctuation">,</span> message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token template-punctuation string">`</span></span>`
+</pre>
       </div>
       
       
