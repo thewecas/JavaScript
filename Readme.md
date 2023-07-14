@@ -1,5 +1,10 @@
 # [33 JavaScript Concepts Every Developer Should Know 🤓️💯️](https://github.com/leonardomso/33-js-concepts)
 
+Reference :
+### [33-js-concepts](https://github.com/leonardomso/33-js-concepts) by [Leonardo Maldonado](https://github.com/leonardomso) on Github
+
+---
+
 ## 1. Call stack, Heap, Queue, Execution Context, Event Loop
 
 - ### Execution Context
@@ -7,7 +12,7 @@
   - Where Execution of code takes place
   - it has 2 components
     - Memory : where variables and functions are stored as key:value pair
-    - Code : wh - ere execution of code happens
+    - Code : where execution of code happens
 
 - ### Call Stack
 
@@ -380,7 +385,7 @@
   console.log(circle1.circumference()); //12.56
   ```
 
-## 14. this(), call(), apply(), bind()
+## 14. this, call(), apply(), bind()
 
 ### this
 
@@ -467,7 +472,7 @@
 > function fn() {
 >   console.log(arguments);
 > }
-> fn(1, 2, 3); // prints [1,2,3]
+> fn(1, 2, 3); // [Arguments] { '0': 1, '1': 2, '2': 3 }
 > ```
 
 ## 16. new, constructor, instanceof and Instances
@@ -516,7 +521,6 @@
 - instance can inherit any property or method from the prototype.
 - each object has a private property that holds a link to another object called its prototype & so on until an object reached with null as its prototype. these makes up the prototype chain
 - `Object.create()` is used to create instance of an object from a prototype.
-  2
 
   - Example
 
@@ -585,7 +589,7 @@
 
 ### reduce
 
-- Syntax : `arrayName.reduce(callbackFn(), initalVal)`
+- Syntax : `arrayName.reduce(callbackFn(), initialVal)`
 - Accumulates array elements into single value by performing the reducer `callbackFn()`,
 - return value from the `callbackFn()` from one iteration is passed to next iteration.
 
@@ -633,7 +637,7 @@
 
 ### Deterministic Function
 
-- for any given input, the output will be same.
+- for a given input, the output will be same irrespective of how many times the function is called.
 
   ```js
   //deterministic function
@@ -650,7 +654,7 @@
   ```js
   const animalArr = ["zebra", "dog", "cat"];
 
-  const addAnimal = (araay, animal) => {
+  const addAnimal = (array, animal) => {
     array.push(animal);
   };
 
@@ -664,18 +668,18 @@
 ### State Mutation
 
 - Direct modification of a state or data structure.
-- changing value or properties of an object or vaiable without creating a new object or variable.
+- changing value or properties of an object or variable without creating a new object or variable.
 - to avoid mutation we can use spread operator & create new object
 
 ### Event Propagation
 
-- when an event ocuurs on an element, it can trigger event handlers not only on that element but also ont its parent elements or ancestors
+- when an event occurs on an element, it can trigger event handlers not only on that element but also ont its parent elements or ancestors
 - 2 phases
   - **Capture phase** : event is captured by outermost element and then propagated downwards to the target element
   - **Bubbling phase** :after target phase,the event starts bubbling up from target element to its ancestor element.
 - **Target phase** starts once the event reaches the target element.
-- we can stop propagation by using `event.stopPropagation()` method wihtin an event handler.
-- Default behaviour of event propagation is Bubbling phase.
+- we can stop propagation by using `event.stopPropagation()` method within an event handler.
+- Default behavior of event propagation is Bubbling phase.
 - We can change this behavior explicitly to capture phase by setting the `useCapture` parameter to `true`.
   `element.addEventListener(eventType, handler, true)`
 
@@ -697,15 +701,15 @@ z(); // Output : 10
 
 ## 22. High Order Functions
 
-- Takes function as a parameter or returns a function.
+- Takes function as a parameter or returns a function.  
   Example:
 
 ```js
-//takes function as a paramter
+//takes function as a parameter
 array.map(() => {...});
 //or
 setTimeout(() = {...});
-//returs a function
+//returns a function
 function x() {
   return function () {
     console.log("hello");
@@ -735,11 +739,11 @@ countDown(5);
 
 ### Collections
 
-- Data strcuturs to store and organize values
+- Data structures to store and organize values
 - **Array** :
 
   - ordered, indexed ,duplicates.
-  - represented using sqaure brackets.
+  - represented using square brackets.
   - few inbuilt methods are : `push`, `pop`, `shift`, `unshift`, `splice` ...
 
   ```js
@@ -815,7 +819,6 @@ console.log(obj.next()); // Output : after yield 2 \n {value: undefined, done: t
 
 ## 25. Promises
 
--
 
 ````js
 let prom = new Promise((resolve, reject) => {
