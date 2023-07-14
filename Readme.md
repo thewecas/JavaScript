@@ -1,4 +1,4 @@
-# [33 JavaScript Concepts Every Developer Should Know 🤓️💯️](https://github.com/leonardomso/33-js-concepts)
+# [33 JavaScript Concepts Every Developer Should Know 🤓️💯️](https://thewecas.github.io/JavaScript/)
 
 Reference :
 ### [33-js-concepts](https://github.com/leonardomso/33-js-concepts) by [Leonardo Maldonado](https://github.com/leonardomso) on Github
